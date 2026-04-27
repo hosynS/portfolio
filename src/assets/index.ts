@@ -23,10 +23,10 @@ import githubActions from "./tech/github-actions.svg";
 import githubIcon from "./tech/GitHub.svg";
 import sqlite from "./tech/SQLite.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import meta from "./company/developer.png";
+import shopify from "./company/network-admin.png";
+import starbucks from "./company/programmer.png";
+import tesla from "./company/robot.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";

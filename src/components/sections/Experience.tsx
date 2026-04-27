@@ -7,12 +7,14 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 import { experiences } from "../../constants";
+import { github } from "../../assets";
 import { SectionWrapper } from "../../hoc";
 import { Header } from "../atoms/Header";
-import { TExperience } from "../../types";
 import { config } from "../../constants/config";
 
-const ExperienceCard: React.FC<TExperience> = (experience) => {
+type TExperienceCard = (typeof experiences)[number];
+
+const ExperienceCard: React.FC<TExperienceCard> = (experience) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
@@ -20,38 +22,51 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
         color: "#fff",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className="flex h-full w-full items-center justify-center">
           <img
             src={experience.icon}
-            alt={experience.companyName}
+            alt={experience.name}
             className="h-[60%] w-[60%] object-contain"
           />
         </div>
       }
     >
-      <div>
-        <h3 className="text-[24px] font-bold text-white">{experience.title}</h3>
-        <p
-          className="text-secondary text-[16px] font-semibold"
-          style={{ margin: 0 }}
-        >
-          {experience.companyName}
+      <div className="relative h-[230px] w-full">
+        <img
+          src={experience.image}
+          alt={experience.name}
+          className="h-full w-full rounded-2xl object-cover"
+        />
+        <div className="card-img_hover absolute inset-0 m-3 flex justify-end">
+          <div
+            onClick={() => window.open(experience.sourceCodeLink, "_blank")}
+            className="black-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full"
+          >
+            <img
+              src={github}
+              alt="github"
+              className="h-1/2 w-1/2 object-contain"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-5">
+        <h3 className="text-[24px] font-bold text-white">{experience.name}</h3>
+        <p className="text-secondary mt-2 text-[14px]">
+          {experience.description}
         </p>
       </div>
 
-      <ul className="ml-5 mt-5 list-disc space-y-2">
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-white-100 pl-1 text-[14px] tracking-wider"
-          >
-            {point}
-          </li>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {experience.tags.map((tag) => (
+          <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+            #{tag.name}
+          </p>
         ))}
-      </ul>
+      </div>
     </VerticalTimelineElement>
   );
 };

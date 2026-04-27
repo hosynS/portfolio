@@ -7,7 +7,6 @@ export type TCommonProps = {
 export type TExperience = {
   companyName: string;
   iconBg: string;
-  date: string;
   points: string[];
 } & Required<Omit<TCommonProps, "name">>;
 
