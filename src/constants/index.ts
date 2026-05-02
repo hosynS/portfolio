@@ -159,7 +159,7 @@ const experiences = [
       },
     ],
     image: jobit,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/SaddamHosyn/bi-solution-hack",
     icon: tesla,
     iconBg: "#E6DEDD",
   },
@@ -182,7 +182,7 @@ const experiences = [
       },
     ],
     image: tripguide,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/SaddamHosyn/buy-02",
     icon: shopify,
     iconBg: "#383E56",
   },
@@ -205,7 +205,7 @@ const experiences = [
       },
     ],
     image: carrent,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/SaddamHosyn/detecto",
     icon: meta,
     iconBg: "#E6DEDD",
   },
@@ -233,7 +233,7 @@ const projects: TProject[] = [
       },
     ],
     image: carrent,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/SaddamHosyn/Net-Cat",
   },
   {
     name: "NLP Scrapper",
@@ -254,7 +254,7 @@ const projects: TProject[] = [
       },
     ],
     image: jobit,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/SaddamHosyn/nlp-scapper",
   },
   {
     name: "Kaggle Titanic",
@@ -275,7 +275,7 @@ const projects: TProject[] = [
       },
     ],
     image: tripguide,
-    sourceCodeLink: "https://github.com/",
+    sourceCodeLink: "https://github.com/SaddamHosyn/kaggletitanic",
   },
 ];
 
