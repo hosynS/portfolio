@@ -10,7 +10,7 @@ import {
 
 import CanvasLoader from "../layout/Loader";
 
-const Ball = (props: any) => {
+const Ball = (props: { imgUrl: string }) => {
   const [decal] = useTexture([props.imgUrl]);
 
   return (
@@ -30,8 +30,6 @@ const Ball = (props: any) => {
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
           map={decal}
-          // @ts-expect-error
-          flatShading
         />
       </mesh>
     </Float>
@@ -40,11 +38,7 @@ const Ball = (props: any) => {
 
 const BallCanvas: React.FC<{ icon: string }> = ({ icon }) => {
   return (
-    <Canvas
-      frameloop="demand"
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-    >
+    <Canvas frameloop="demand" dpr={[1, 2]} gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enablePan={false} enableZoom={false} />
         <Ball imgUrl={icon} />

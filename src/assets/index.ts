@@ -14,19 +14,22 @@ import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import reactjs from "./tech/reactjs.png";
 import typescript from "./tech/typescript.png";
-import python from "./tech/python.svg";
-import tensorflow from "./tech/tensorflow.svg";
+import python from "./tech/python.png";
 import pytorch from "./tech/PyTorch.png";
 import golang from "./tech/golang.svg";
 import bash from "./tech/Bash.svg";
-import githubActions from "./tech/github-actions.svg";
 import githubIcon from "./tech/GitHub.svg";
-import sqlite from "./tech/SQLite.svg";
+import postgresql from "./tech/postgresql.png";
+import kafka from "./tech/kafka.png";
+import streamlit from "./tech/streamlit.png";
+import flask from "./tech/flask.png";
 
-import meta from "./company/developer.png";
-import shopify from "./company/network-admin.png";
-import starbucks from "./company/programmer.png";
-import tesla from "./company/robot.png";
+import developer from "./company/developer.png";
+import networkAdmin from "./company/network-admin.png";
+import programmer from "./company/programmer.png";
+import robot from "./company/robot.png";
+import analytics from "./company/analytics.png";
+import statistics from "./company/statistics.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -49,17 +52,20 @@ export {
   reactjs,
   typescript,
   python,
-  tensorflow,
   pytorch,
   golang,
   bash,
-  githubActions,
   githubIcon,
-  sqlite,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
+  postgresql,
+  kafka,
+  streamlit,
+  flask,
+  developer,
+  networkAdmin,
+  programmer,
+  robot,
+  analytics,
+  statistics,
   carrent,
   jobit,
   tripguide,
