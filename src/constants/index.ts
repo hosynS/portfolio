@@ -23,11 +23,12 @@ import {
   kafka,
   streamlit,
   flask,
+  bi,
   carrent,
-  jobit,
   tripguide,
   networkAdmin,
   programmer,
+  developer,
   robot,
   analytics,
   statistics,
@@ -71,6 +72,7 @@ const experiences = [
       { name: "python", color: "blue-text-gradient" },
       { name: "pytorch", color: "green-text-gradient" },
       { name: "YOLOv5", color: "pink-text-gradient" },
+      { name: "OpenCV", color: "blue-text-gradient" },
     ],
     image: carrent,
     sourceCodeLink: "https://github.com/SaddamHosyn",
@@ -78,16 +80,17 @@ const experiences = [
     iconBg: "#383E56",
   },
   {
-    name: "BI Solution Hack",
+    name: "BI-Solution-Course-Project",
     description:
       "Architected an end-to-end ELT data pipeline using Python and DuckDB, implementing Medallion Architecture (Bronze/Silver/Gold) to process 5M+ sales records. Integrated heterogeneous data sources (JSON logs, government APIs, CSV) into a unified analytical warehouse. Developed a comprehensive BI dashboard with Streamlit to visualize per-capita consumption trends and tourism impacts.",
     tags: [
       { name: "python", color: "blue-text-gradient" },
       { name: "DuckDB", color: "green-text-gradient" },
       { name: "streamlit", color: "pink-text-gradient" },
+      { name: "ELT", color: "blue-text-gradient" },
     ],
-    image: jobit,
-    sourceCodeLink: "https://github.com/SaddamHosyn/bi-solution-hack",
+    image: bi,
+    sourceCodeLink: "https://github.com/SaddamHosyn/bi-solution-course-project",
     icon: robot,
     iconBg: "#E6DEDD",
   },
@@ -99,6 +102,7 @@ const experiences = [
       { name: "spring-boot", color: "blue-text-gradient" },
       { name: "angular", color: "green-text-gradient" },
       { name: "kafka", color: "pink-text-gradient" },
+       { name: "mongodb", color: "blue-text-gradient" },
     ],
     image: tripguide,
     sourceCodeLink: "https://github.com/SaddamHosyn/buy-02",
@@ -136,6 +140,21 @@ const experiences = [
     icon: statistics,
     iconBg: "#383E56",
   },
+  {
+  name: "Real-Time Forum",
+  description:
+    "Built a modern single-page forum application using Go, SQLite, and Vanilla JavaScript with secure authentication, post feeds, commenting, and real-time private messaging. Implemented WebSocket-based chat with live user presence, ordered conversations, and instant updates without page reloads. Designed the frontend as a lightweight SPA with hash-based routing and dynamic DOM rendering, then containerized the application with Docker for reproducible setup and deployment.",
+  tags: [
+    { name: "golang", color: "blue-text-gradient" },
+    { name: "SQLite", color: "green-text-gradient" },
+    { name: "WebSocket", color: "pink-text-gradient" },
+    { name: "VanillaJS", color: "blue-text-gradient" },
+  ],
+  image: carrent,
+  sourceCodeLink: "https://github.com/SaddamHosyn/real-time-forum",
+  icon: developer,
+  iconBg: "#383E56",
+},
 ];
 const projects: TProject[] = [
   {
@@ -157,9 +176,9 @@ const projects: TProject[] = [
     tags: [
       { name: "python", color: "blue-text-gradient" },
       { name: "SpaCy", color: "green-text-gradient" },
-      { name: "scikit-learn", color: "pink-text-gradient" },
+      { name: "BeautifulSoup", color: "blue-text-gradient" },
     ],
-    image: jobit,
+    image: bi,
     sourceCodeLink: "https://github.com/SaddamHosyn/nlp-scapper",
   },
   {

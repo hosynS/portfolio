@@ -31,8 +31,8 @@ import robot from "./company/robot.png";
 import analytics from "./company/analytics.png";
 import statistics from "./company/statistics.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
+import carrent from "./wheat.png";
+import bi from "./bi.png";
 import tripguide from "./tripguide.png";
 
 export {
@@ -67,6 +67,6 @@ export {
   analytics,
   statistics,
   carrent,
-  jobit,
+  bi,
   tripguide,
 };
