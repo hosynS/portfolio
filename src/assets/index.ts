@@ -33,7 +33,9 @@ import statistics from "./company/statistics.png";
 
 import carrent from "./wheat.png";
 import bi from "./bi.png";
-import tripguide from "./tripguide.png";
+import buy from "./buy.png";
+import real from "./real.png";
+import net from "./net.png";
 
 export {
   logo,
@@ -68,5 +70,7 @@ export {
   statistics,
   carrent,
   bi,
-  tripguide,
+  buy,
+  real,
+  net,
 };

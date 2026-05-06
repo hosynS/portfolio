@@ -67,10 +67,7 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `I'm a software developer with hands on experience in Golang, JavScript,TypeScript, Python and
-      JavaScript. I'm a quick learner and collaborate closely with clients to
-      create efficient, scalable, and user-friendly solutions that solve
-      real-world problems. Let's work together to bring your ideas to life!`,
+      content: `I'm a software developer with hands-on experience in Bash scripting, Golang, JavaScript, TypeScript, and Python. I’m a quick learner who collaborates closely with clients to build efficient, scalable, and user-friendly solutions to real-world problems. Let’s work together to bring your ideas to life!`,
     },
     experience: {
       p: "What I have done so far",
