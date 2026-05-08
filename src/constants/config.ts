@@ -33,8 +33,10 @@ type TConfig = {
   sections: {
     about: Required<TSection>;
     experience: TSection;
+    techStack: TSection;
     feedbacks: TSection;
     works: Required<TSection>;
+    certifications: TSection;
   };
 };
 
@@ -69,22 +71,31 @@ export const config: TConfig = {
       h2: "Overview.",
       content: `I'm a software developer with hands-on experience in Bash scripting, Golang, JavaScript, TypeScript, and Python. I’m a quick learner who collaborates closely with clients to build efficient, scalable, and user-friendly solutions to real-world problems. Let’s work together to bring your ideas to life!`,
     },
+      
     experience: {
       p: "What I have done so far",
       h2: "Projects.",
     },
+    techStack: {
+       p: "Tools & technologies I work with",
+      h2: "Tech Stack.",
+  },
     feedbacks: {
       p: "What others say",
       h2: "Testimonials.",
     },
     works: {
-      p: "My work",
+      p: "",
       h2: "Other Projects.",
       content: `Following projects showcases my skills and experience through
     real-world examples of my work. Each project is briefly described with
-    links to code repositories and live demos in it. It reflects my
+    links to code repositories. It reflects my
     ability to solve complex problems, work with different technologies,
     and manage projects effectively.`,
     },
+    certifications: {
+      p: "What I have earned",
+      h2: "Certifications.",
+  },
   },
 };

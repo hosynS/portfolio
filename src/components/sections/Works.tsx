@@ -77,6 +77,16 @@ const Works = () => {
         </motion.p>
       </div>
 
+       <a
+  href="https://github.com/SaddamHosyn"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-4 inline-flex items-center gap-2 text-secondary hover:text-white transition-colors text-[14px] border border-secondary hover:border-white rounded-full px-4 py-2"
+>
+  <img src={github} alt="GitHub" className="w-4 h-4 object-contain" />
+  View GitHub Profile →
+</a>
+
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />

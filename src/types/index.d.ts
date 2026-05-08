@@ -41,3 +41,12 @@ export type TMotion = {
   delay: number;
   duration: number;
 };
+
+export type TCertification = {
+  title: string;
+  issuer: string;
+  date: string;
+  link: string;
+};
+
+export type { TNavLink, TService, TTechnology, TProject, TCertification };

@@ -27,6 +27,7 @@ import {
   buy,
   real,
   net,
+  orc,
   carrent,
   networkAdmin,
   programmer,
@@ -39,14 +40,18 @@ import {
 export const navLinks: TNavLink[] = [
   { id: "about", title: "About" },
   { id: "projects", title: "Projects" },
+  { id: "tech-stack", title: "Tech Stack" },
+  { id: "certifications", title: "Certifications" },
   { id: "contact", title: "Contact" },
 ];
 
 const services: TService[] = [
   { title: "Backend Development", icon: web },
-  { title: "Computer Vision", icon: backend },
+  { title: "Integration Engineering", icon: creator },
   { title: "DevOps Engineering", icon: mobile },
-  { title: "MLOps", icon: creator },
+  { title: "Data Engineering", icon: backend },
+  
+  
 ];
 
 const technologies: TTechnology[] = [
@@ -137,7 +142,7 @@ const experiences = [
       { name: "Vagrant", color: "blue-text-gradient" },
       { name: "DevOps", color: "green-text-gradient" },
     ],
-    image: carrent,
+    image: orc,
     sourceCodeLink: "https://github.com/SaddamHosyn/orchestrator",
     icon: statistics,
     iconBg: "#383E56",
@@ -196,5 +201,14 @@ const projects: TProject[] = [
     sourceCodeLink: "https://github.com/SaddamHosyn/kaggletitanic",
   },
 ];
+const certifications = [
+  {
+    title: "AWS Certified Solutions Architect",
+    issuer: "Amazon Web Services",
+    date: "2024",
+    link: "https://aws.amazon.com/certification/",
+  },
+  // add your real certs here
+];
 
-export { services, technologies, experiences, projects };
+export { services, technologies, experiences, projects, certifications };

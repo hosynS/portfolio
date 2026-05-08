@@ -17,7 +17,7 @@ import typescript from "./tech/typescript.png";
 import python from "./tech/python.png";
 import pytorch from "./tech/PyTorch.png";
 import golang from "./tech/golang.svg";
-import bash from "./tech/Bash.svg";
+import bash from "./tech/bash.png";
 import githubIcon from "./tech/GitHub.svg";
 import postgresql from "./tech/postgresql.png";
 import kafka from "./tech/kafka.png";
@@ -36,6 +36,7 @@ import bi from "./bi.png";
 import buy from "./buy.png";
 import real from "./real.png";
 import net from "./net.png";
+import orc from "./orc.png";
 
 export {
   logo,
@@ -73,4 +74,5 @@ export {
   buy,
   real,
   net,
+  orc,
 };

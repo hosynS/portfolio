@@ -77,12 +77,12 @@ const Experience = () => {
       <Header useMotion={true} {...config.sections.experience} />
 
       <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard key={index} {...experience} />
-          ))}
-        </VerticalTimeline>
-      </div>
+  <VerticalTimeline animate={false}>
+    {experiences.map((experience, index) => (
+      <ExperienceCard key={index} {...experience} />
+    ))}
+  </VerticalTimeline>
+</div>
     </>
   );
 };
