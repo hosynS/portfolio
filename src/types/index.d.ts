@@ -47,6 +47,8 @@ export type TCertification = {
   issuer: string;
   date: string;
   link: string;
+  type: "pdf" | "image";
+  credentialId?: string;
 };
 
 export type { TNavLink, TService, TTechnology, TProject, TCertification };

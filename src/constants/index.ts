@@ -3,6 +3,7 @@ import type {
   TService,
   TTechnology,
   TProject,
+  TCertification,
 } from "../types";
 
 import {
@@ -201,14 +202,56 @@ const projects: TProject[] = [
     sourceCodeLink: "https://github.com/SaddamHosyn/kaggletitanic",
   },
 ];
-const certifications = [
+const certifications: TCertification[] = [
   {
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
+    title: "Data Mining and Access Web Data",
+    issuer: "University of Helsinki",
     date: "2024",
-    link: "https://aws.amazon.com/certification/",
+    link: "https://drive.google.com/file/d/1LGu2dZc8cSFWYIv8WvZlvMsiD3niPjze/preview",
+    type: "image",
   },
-  // add your real certs here
+  {
+    title: "Scientific Writing",
+    issuer: "University of Helsinki",
+    date: "2024",
+    link: "https://drive.google.com/file/d/1ExOpb2c-cMhPt3JSztyV1Lgj1OM4VxJS/preview",
+    type: "pdf",
+  },
+  {
+    title: "Junction Hackathon",
+    issuer: "Junction",
+    date: "2024",
+    link: "https://drive.google.com/file/d/1oeir8Inb6zKWA0xHHN3EDlkEWiPgYKc2/preview",
+    type: "pdf",
+  },
+  {
+    title: "Foundations of Mining Non-Structured Medical Data",
+    issuer: "University of Helsinki",
+    date: "2024",
+    link: "https://drive.google.com/file/d/1sNeJgAcu4t3xGtKj51r52OiYcRjUYQ9u/preview",
+    type: "pdf",
+  },
+  {
+    title: "Ethics of AI",
+    issuer: "University of Helsinki",
+    date: "2024",
+    link: "https://drive.google.com/file/d/1Q-A_-YUZS50ZpuhgzAbvAWdxHz-iDJxL/preview",
+    type: "pdf",
+  },
+  {
+    title: "Business Analytics with Excel",
+    issuer: "LinkedIn Learning",
+    date: "2024",
+    link: "https://drive.google.com/file/d/1W2PShD8xigFH_R2-cEV8Lw0nGwCCqx2U/preview",
+    type: "pdf",
+  },
+  {
+    title: "Introduction to SQL",
+    issuer: "University of Helsinki",
+    date: "2024",
+    link: "https://drive.google.com/file/d/1gmwCv3Yl0AA5ipuKPbVDwWCTq5jhq7ds/preview",
+    type: "pdf",
+  },
 ];
 
 export { services, technologies, experiences, projects, certifications };
