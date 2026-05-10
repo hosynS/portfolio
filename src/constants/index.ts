@@ -205,14 +205,14 @@ const projects: TProject[] = [
 const certifications: TCertification[] = [
   {
     title: "Data Mining and Access Web Data",
-    issuer: "University of Helsinki",
+    issuer: "techclass",
     date: "2024",
     link: "https://drive.google.com/file/d/1LGu2dZc8cSFWYIv8WvZlvMsiD3niPjze/preview",
     type: "image",
   },
   {
     title: "Scientific Writing",
-    issuer: "University of Helsinki",
+    issuer: "ICESCO",
     date: "2024",
     link: "https://drive.google.com/file/d/1ExOpb2c-cMhPt3JSztyV1Lgj1OM4VxJS/preview",
     type: "pdf",
@@ -226,7 +226,7 @@ const certifications: TCertification[] = [
   },
   {
     title: "Foundations of Mining Non-Structured Medical Data",
-    issuer: "University of Helsinki",
+    issuer: "Coursera",
     date: "2024",
     link: "https://drive.google.com/file/d/1sNeJgAcu4t3xGtKj51r52OiYcRjUYQ9u/preview",
     type: "pdf",
@@ -240,14 +240,14 @@ const certifications: TCertification[] = [
   },
   {
     title: "Business Analytics with Excel",
-    issuer: "LinkedIn Learning",
+    issuer: "simplilearn",
     date: "2024",
     link: "https://drive.google.com/file/d/1W2PShD8xigFH_R2-cEV8Lw0nGwCCqx2U/preview",
     type: "pdf",
   },
   {
     title: "Introduction to SQL",
-    issuer: "University of Helsinki",
+    issuer: "sololearn",
     date: "2024",
     link: "https://drive.google.com/file/d/1gmwCv3Yl0AA5ipuKPbVDwWCTq5jhq7ds/preview",
     type: "pdf",
