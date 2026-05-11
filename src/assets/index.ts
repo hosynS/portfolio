@@ -37,6 +37,8 @@ import buy from "./buy.png";
 import real from "./real.png";
 import net from "./net.png";
 import orc from "./orc.png";
+import nlp from "./nlp.png";
+import kag from "./kag.png";
 
 export {
   logo,
@@ -75,4 +77,6 @@ export {
   real,
   net,
   orc,
+  kag,
+  nlp,
 };

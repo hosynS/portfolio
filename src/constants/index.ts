@@ -26,6 +26,8 @@ import {
   flask,
   bi,
   buy,
+  kag,
+  nlp,
   real,
   net,
   orc,
@@ -186,7 +188,7 @@ const projects: TProject[] = [
       { name: "SpaCy", color: "green-text-gradient" },
       { name: "BeautifulSoup", color: "blue-text-gradient" },
     ],
-    image: bi,
+    image: nlp,
     sourceCodeLink: "https://github.com/SaddamHosyn/nlp-scapper",
   },
   {
@@ -198,7 +200,7 @@ const projects: TProject[] = [
       { name: "XGBoost", color: "green-text-gradient" },
       { name: "scikit-learn", color: "pink-text-gradient" },
     ],
-    image: buy,
+    image: kag,
     sourceCodeLink: "https://github.com/SaddamHosyn/kaggletitanic",
   },
 ];
