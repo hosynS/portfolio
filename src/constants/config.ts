@@ -48,7 +48,7 @@ export const config: TConfig = {
   },
   hero: {
     name: "Saddam Hussain",
-    p: ["I develop scalable web applications, automate DevOps pipelines, and build AI solutions."],
+    p: ["Systems Development | DevOps Automation | Cloud Infrastructure"],
   },
   contact: {
     p: "Get in touch",
@@ -69,7 +69,7 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `I'm a software developer with hands-on experience in Bash scripting, Golang, JavaScript, TypeScript, and Python. I’m a quick learner who collaborates closely with clients to build efficient, scalable, and user-friendly solutions to real-world problems. Let’s work together to bring your ideas to life!`,
+      content: `With expertise in Python, Golang, Bash, and TypeScript, I specialize in bridging the gap between development and operations. I focus on the entire system lifecycle—from designing resilient backend microservices to automating the deployment pipelines that run them. I collaborate closely with teams to optimize complex integrations and deliver scalable, production-ready solutions. Let’s build something great together!`,
     },
       
     experience: {
