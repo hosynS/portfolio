@@ -42,13 +42,13 @@ type TConfig = {
 
 export const config: TConfig = {
   html: {
-    title: "Saddam Hussain — Portfolio",
+    title: "Saddam Hussain",
     fullName: "Saddam Hussain",
-    email: "saddamhussain1919@gmail.com",
+    email: "sadamhos92@gmail.com",
   },
   hero: {
     name: "Saddam Hussain",
-    p: ["Systems Development | DevOps Automation | Cloud Infrastructure"],
+    p: ["Great code matters, but so does the team behind it."],
   },
   contact: {
     p: "Get in touch",
@@ -69,7 +69,7 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `With expertise in Python, Golang, Bash, and TypeScript, I specialize in bridging the gap between development and operations. I focus on the entire system lifecycle—from designing resilient backend microservices to automating the deployment pipelines that run them. I collaborate closely with teams to optimize complex integrations and deliver scalable, production-ready solutions. Let’s build something great together!`,
+      content: `I work across the full stack of modern engineering — from backend services and system integrations to DevOps pipelines and data workflows. I'm actively moving deeper into the DevOps space — CI/CD pipelines, infrastructure automation, and keeping systems reliable in production are where my focus is headed. What I enjoy most is the collaborative side: pairing with teams, aligning on goals, and shipping things that actually hold up in production. Python, Go, Bash, TypeScript — give me the tools, I'll make them work!`,
     },
       
     experience: {
@@ -85,13 +85,9 @@ export const config: TConfig = {
       h2: "Testimonials.",
     },
     works: {
-      p: "",
+      p: "What else I've built",
       h2: "Other Projects.",
-      content: `Following projects showcases my skills and experience through
-    real-world examples of my work. Each project is briefly described with
-    links to code repositories. It reflects my
-    ability to solve complex problems, work with different technologies,
-    and manage projects effectively.`,
+      content: `These projects complement my main portfolio by highlighting additional technical experience, practical problem-solving, and work across a broader range of tools and technologies. Together, they reflect my adaptability, curiosity, and ability to apply my skills in different contexts.`,
     },
     certifications: {
       p: "What I have earned",

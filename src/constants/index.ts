@@ -128,6 +128,8 @@ const experiences = [
       { name: "Terraform", color: "green-text-gradient" },
       { name: "Kubernetes", color: "pink-text-gradient" },
       { name: "Docker", color: "blue-text-gradient" },
+      { name: "IaC", color: "blue-text-gradient" },
+      
     ],
     image: carrent,
     sourceCodeLink: "https://github.com/SaddamHosyn/cloud-design",
@@ -139,11 +141,10 @@ const experiences = [
     description:
       "Built a production-style microservices platform by migrating a Docker Compose architecture to a distributed K3s Kubernetes cluster running across master and worker nodes. Containerized and deployed API gateway, inventory, billing, RabbitMQ, and PostgreSQL services using Deployments, StatefulSets, Secrets, Persistent Volumes, and Horizontal Pod Autoscaling. Automated cluster setup with Vagrant and shell scripting, improved service orchestration and fault isolation, and applied DevOps best practices for scalable deployment, configuration, and operations.",
     tags: [
-      { name: "Kubernetes", color: "blue-text-gradient" },
-      { name: "K3s", color: "green-text-gradient" },
+      { name: "RabbitMQ", color: "blue-text-gradient" },
+      { name: "Kubernetes", color: "green-text-gradient" },
       { name: "Docker", color: "pink-text-gradient" },
-      { name: "Vagrant", color: "blue-text-gradient" },
-      { name: "DevOps", color: "green-text-gradient" },
+      { name: "PostgreSQL", color: "blue-text-gradient" },
     ],
     image: orc,
     sourceCodeLink: "https://github.com/SaddamHosyn/orchestrator",
@@ -186,7 +187,7 @@ const projects: TProject[] = [
     tags: [
       { name: "python", color: "blue-text-gradient" },
       { name: "SpaCy", color: "green-text-gradient" },
-      { name: "BeautifulSoup", color: "blue-text-gradient" },
+      { name: "BeautifulSoup", color: "pink-text-gradient" },
     ],
     image: nlp,
     sourceCodeLink: "https://github.com/SaddamHosyn/nlp-scapper",
