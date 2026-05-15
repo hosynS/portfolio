@@ -69,7 +69,7 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `I work across the full stack of modern engineering — from backend services and system integrations to DevOps pipelines and data workflows. I'm actively moving deeper into the DevOps space — CI/CD pipelines, infrastructure automation, and keeping systems reliable in production are where my focus is headed. What I enjoy most is the collaborative side: pairing with teams, aligning on goals, and shipping things that actually hold up in production. Python, Go, Bash, TypeScript — give me the tools, I'll make them work!`,
+      content: `I work across the full stack of modern engineering, with expertise spanning DevOps, backend systems, integrations, and data workflows. I specialize in building scalable, reliable platforms through infrastructure automation, CI/CD pipelines, and production-focused engineering practices. I enjoy turning complex architectures into maintainable and dependable solutions that perform reliably in real-world environments. I thrive in collaborative teams where engineering meets execution — aligning around shared goals, solving problems deeply, and delivering technology built for long-term sustainability. Whether working with Python, Go, Bash, or TypeScript, I adapt quickly and build with reliability and scalability in mind.`,
     },
       
     experience: {

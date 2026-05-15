@@ -79,8 +79,8 @@ const experiences = [
     description:
       "Engineered a computer vision project with Python and PyTorch, implementing custom model architectures (YOLOv5 + SE blocks) to detect wheat diseases with high accuracy. Worked on data preprocessing with OpenCV, including image augmentation and formatting. Orchestrated model training and evaluation, comparing multiple backbones (ShuffleNetv2, YOLOv5m) and documenting performance metrics.",
     tags: [
-      { name: "python", color: "blue-text-gradient" },
-      { name: "pytorch", color: "green-text-gradient" },
+      { name: "Python", color: "blue-text-gradient" },
+      { name: "PyTorch", color: "green-text-gradient" },
       { name: "YOLOv5", color: "pink-text-gradient" },
       { name: "OpenCV", color: "blue-text-gradient" },
     ],
@@ -94,10 +94,11 @@ const experiences = [
     description:
       "Architected an end-to-end ELT data pipeline using Python and DuckDB, implementing Medallion Architecture (Bronze/Silver/Gold) to process 5M+ sales records. Integrated heterogeneous data sources (JSON logs, government APIs, CSV) into a unified analytical warehouse. Developed a comprehensive BI dashboard with Streamlit to visualize per-capita consumption trends and tourism impacts.",
     tags: [
-      { name: "python", color: "blue-text-gradient" },
+      { name: "Python", color: "blue-text-gradient" },
       { name: "DuckDB", color: "green-text-gradient" },
-      { name: "streamlit", color: "pink-text-gradient" },
+      { name: "Streamlit", color: "pink-text-gradient" },
       { name: "ELT", color: "blue-text-gradient" },
+      { name: "dbt", color: "green-text-gradient" },
     ],
     image: bi,
     sourceCodeLink: "https://github.com/SaddamHosyn/bi-solution-course-project",
@@ -109,10 +110,10 @@ const experiences = [
     description:
       "Architected a full-stack microservices platform using Spring Boot and Angular, integrating Kafka for event-driven data consistency. Built a robust CI/CD pipeline with Jenkins and SonarQube. Designed scalable data models in MongoDB for shopping carts, order management, and real-time analytics. Implemented secure RESTful APIs with JWT authentication and role-based access control.",
     tags: [
-      { name: "spring-boot", color: "blue-text-gradient" },
-      { name: "angular", color: "green-text-gradient" },
-      { name: "kafka", color: "pink-text-gradient" },
-       { name: "mongodb", color: "blue-text-gradient" },
+      { name: "Spring-Boot", color: "blue-text-gradient" },
+      { name: "Angular", color: "green-text-gradient" },
+      { name: "Kafka", color: "pink-text-gradient" },
+       { name: "MongoDB", color: "blue-text-gradient" },
     ],
     image: buy,
     sourceCodeLink: "https://github.com/SaddamHosyn/buy-02",
@@ -128,7 +129,7 @@ const experiences = [
       { name: "Terraform", color: "green-text-gradient" },
       { name: "Kubernetes", color: "pink-text-gradient" },
       { name: "Docker", color: "blue-text-gradient" },
-      { name: "IaC", color: "blue-text-gradient" },
+      { name: "IaC", color: "green-text-gradient" },
       
     ],
     image: carrent,
@@ -156,10 +157,11 @@ const experiences = [
   description:
     "Built a modern single-page forum application using Go, SQLite, and Vanilla JavaScript with secure authentication, post feeds, commenting, and real-time private messaging. Implemented WebSocket-based chat with live user presence, ordered conversations, and instant updates without page reloads. Designed the frontend as a lightweight SPA with hash-based routing and dynamic DOM rendering, then containerized the application with Docker for reproducible setup and deployment.",
   tags: [
-    { name: "golang", color: "blue-text-gradient" },
+    { name: "Golang", color: "blue-text-gradient" },
     { name: "SQLite", color: "green-text-gradient" },
     { name: "WebSocket", color: "pink-text-gradient" },
-    { name: "VanillaJS", color: "blue-text-gradient" },
+    { name: "JS", color: "blue-text-gradient" },
+    { name: "SPA", color: "green-text-gradient" },
   ],
   image: real,
   sourceCodeLink: "https://github.com/SaddamHosyn/real-time-forum",
@@ -173,9 +175,9 @@ const projects: TProject[] = [
     description:
       "Built a concurrent TCP chat server in Go supporting multiple simultaneous client connections, message broadcasting, and timestamped chat history. Managed concurrent connections using Goroutines and channels, handling client join/leave events, nicknames, and graceful disconnections.",
     tags: [
-      { name: "golang", color: "blue-text-gradient" },
+      { name: "Golang", color: "blue-text-gradient" },
       { name: "TCP", color: "green-text-gradient" },
-      { name: "concurrency", color: "pink-text-gradient" },
+      { name: "Concurrency", color: "pink-text-gradient" },
     ],
     image: net,
     sourceCodeLink: "https://github.com/SaddamHosyn/Net-Cat",
@@ -185,7 +187,7 @@ const projects: TProject[] = [
     description:
       "Developed a news intelligence pipeline using Python and BeautifulSoup, automating scraping of 300+ articles into a structured SQL database. Implemented NLP processing with SpaCy and NLTK for named entity detection, topic classification (>95% accuracy), and sentiment analysis. Engineered a scandal detection system using word embeddings and distance metrics.",
     tags: [
-      { name: "python", color: "blue-text-gradient" },
+      { name: "Python", color: "blue-text-gradient" },
       { name: "SpaCy", color: "green-text-gradient" },
       { name: "BeautifulSoup", color: "pink-text-gradient" },
     ],
@@ -197,9 +199,9 @@ const projects: TProject[] = [
     description:
       "Built a machine learning project with advanced feature engineering (imputation, categorical encoding) achieving ~82-84% accuracy. Developed and evaluated ensemble models (Stacking/Voting with XGBoost, LightGBM, Random Forest) using Scikit-Learn pipelines. Structured the project for reproducibility with organized notebooks, data, and dependencies.",
     tags: [
-      { name: "python", color: "blue-text-gradient" },
+      { name: "Python", color: "blue-text-gradient" },
       { name: "XGBoost", color: "green-text-gradient" },
-      { name: "scikit-learn", color: "pink-text-gradient" },
+      { name: "Scikit-Learn", color: "pink-text-gradient" },
     ],
     image: kag,
     sourceCodeLink: "https://github.com/SaddamHosyn/kaggletitanic",
