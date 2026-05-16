@@ -76,13 +76,20 @@ const technologies: TTechnology[] = [
 const experiences = [
   {
     name: "Wheat Disease Detection",
-    description:
-      "Engineered a computer vision project with Python and PyTorch, implementing custom model architectures (YOLOv5 + SE blocks) to detect wheat diseases with high accuracy. Worked on data preprocessing with OpenCV, including image augmentation and formatting. Orchestrated model training and evaluation, comparing multiple backbones (ShuffleNetv2, YOLOv5m) and documenting performance metrics.",
+    description: 
+      `Traditional agricultural disease detection methods are time-consuming and lack accuracy. Off-the-shelf deep learning models often struggle to effectively extract detailed, complex disease features from wheat fields, limiting the development of smart agriculture.
+
+      Engineered an optimized computer vision pipeline based on the YOLOv5m architecture. To enhance the network's ability to extract subtle disease details, I integrated a Squeeze-and-Excitation (SE) channel attention module directly into the feature extraction network, enabling the model to dynamically prioritize spatial details and disease dependencies.
+
+      Constructed and augmented a dataset of 11,510 images spanning 5 wheat conditions (Healthy, Furasiam Head, Loose Smut, Powdery Mildew, Rust Leaf). Conducted systematic ablation studies, testing YOLOv5 variants (s, m, Lite) and a ShuffleNetv2 backbone, ultimately proving the SE-attention architecture was the most effective.
+
+      The custom YOLOv5m-SE model achieved 82.16% precision, an 84.87% recall rate, and an 87.21% mAP@0.5. It successfully outperformed baseline models like Faster R-CNN, SSD, and YOLOv5m-ShuffleNetv2, demonstrating high accuracy even in complex field backgrounds.`,
     tags: [
       { name: "Python", color: "blue-text-gradient" },
       { name: "PyTorch", color: "green-text-gradient" },
       { name: "YOLOv5", color: "pink-text-gradient" },
       { name: "OpenCV", color: "blue-text-gradient" },
+      { name: "DataAugmentation", color: "green-text-gradient" },
     ],
     image: carrent,
     sourceCodeLink: "https://github.com/SaddamHosyn",
@@ -91,14 +98,19 @@ const experiences = [
   },
   {
     name: "BI-Solution-Course-Project",
-    description:
-      "Architected an end-to-end ELT data pipeline using Python and DuckDB, implementing Medallion Architecture (Bronze/Silver/Gold) to process 5M+ sales records. Integrated heterogeneous data sources (JSON logs, government APIs, CSV) into a unified analytical warehouse. Developed a comprehensive BI dashboard with Streamlit to visualize per-capita consumption trends and tourism impacts.",
+    description: `Built an end-to-end BI solution for a grocery retail chain in Åland, to analyze market penetration, per-capita grocery spending, and tourism-driven seasonal demand across all 12 municipalities. Solved a multi-source data integration problem by ingesting daily JSON sales logs, ÅSUB demographic API data, and tourism CSV files into a unified DuckDB warehouse.
+
+Designed the pipeline using a Medallion ELT architecture with Bronze, Silver, and Gold layers. Implemented raw ingestion in Python, cleaned and standardized cross-source data in SQL/Python, and modeled business-ready aggregates for municipality revenue, per-capita spend, seasonal sales trends, and YoY growth. Used dbt for modular transformations and GNU Make to orchestrate reproducible pipeline execution.
+
+Delivered an interactive Streamlit dashboard with KPI views, municipality deep dives, and product-seasonality analysis. The system processed 5M+ sales records and surfaced business metrics such as €101M+ revenue, 204,579 transactions, and Kökar as the highest per-capita spending municipality in the 2025 analysis.`,
     tags: [
       { name: "Python", color: "blue-text-gradient" },
       { name: "DuckDB", color: "green-text-gradient" },
       { name: "Streamlit", color: "pink-text-gradient" },
       { name: "ELT", color: "blue-text-gradient" },
       { name: "dbt", color: "green-text-gradient" },
+      { name: "SQL", color: "pink-text-gradient" },
+      { name: "DataPipelines", color: "blue-text-gradient" },
     ],
     image: bi,
     sourceCodeLink: "https://github.com/SaddamHosyn/bi-solution-course-project",
@@ -108,12 +120,16 @@ const experiences = [
   {
     name: "Buy-02",
     description:
-      "Architected a full-stack microservices platform using Spring Boot and Angular, integrating Kafka for event-driven data consistency. Built a robust CI/CD pipeline with Jenkins and SonarQube. Designed scalable data models in MongoDB for shopping carts, order management, and real-time analytics. Implemented secure RESTful APIs with JWT authentication and role-based access control.",
+  `Engineered a full-stack microservices e-commerce platform with Spring Boot, Angular, MongoDB, and Kafka, covering the entire flow from product browsing through cart, checkout, and order. Designed and implemented a service-oriented architecture with API Gateway, Eureka service registry, database-per-service pattern, and event-driven messaging for cascade deletions and data consistency across user, product, media, and order services.
+
+Built secure REST APIs with JWT-based authentication and role-based authorization (CLIENT, SELLER, ADMIN), then developed a responsive Angular SPA with shopping cart, checkout wizard, order management, profile management, and buyer/seller analytics dashboards. Containerized all services with Docker Compose and wired a Jenkins + SonarQube CI/CD pipeline that automatically builds, tests, enforces quality gates, and deploys the system on every push, providing production-style deployment steps and technical proof of maintainability and scalability.`,
     tags: [
       { name: "Spring-Boot", color: "blue-text-gradient" },
       { name: "Angular", color: "green-text-gradient" },
       { name: "Kafka", color: "pink-text-gradient" },
        { name: "MongoDB", color: "blue-text-gradient" },
+       { name: "Eureka", color: "green-text-gradient" },
+       { name: "Jenkins", color: "pink-text-gradient" },
     ],
     image: buy,
     sourceCodeLink: "https://github.com/SaddamHosyn/buy-02",
@@ -140,12 +156,18 @@ const experiences = [
   {
     name: "Orchestrator",
     description:
-      "Built a production-style microservices platform by migrating a Docker Compose architecture to a distributed K3s Kubernetes cluster running across master and worker nodes. Containerized and deployed API gateway, inventory, billing, RabbitMQ, and PostgreSQL services using Deployments, StatefulSets, Secrets, Persistent Volumes, and Horizontal Pod Autoscaling. Automated cluster setup with Vagrant and shell scripting, improved service orchestration and fault isolation, and applied DevOps best practices for scalable deployment, configuration, and operations.",
+  `Built a production-style microservices platform by migrating a Docker Compose architecture to a two-node K3s Kubernetes cluster running on Vagrant-provisioned virtual machines. Designed the cluster with a clear separation between stateless and stateful workloads, exposing only the API gateway through NodePort while keeping PostgreSQL services internal and persisting database state with PersistentVolumeClaims.
+
+Deployed and orchestrated six services using Kubernetes Deployments, StatefulSets, Services, Secrets, and Horizontal Pod Autoscalers. Implemented message-driven resilience with RabbitMQ so billing requests were accepted asynchronously and safely processed even when the billing service was temporarily offline, while all credentials were isolated in Kubernetes Secrets rather than hardcoded into manifests.
+
+Automated the full cluster lifecycle through a single orchestrator script that created VMs, installed K3s, joined the worker node, applied manifests in dependency order, and verified workloads with kubectl. The project showcases Kubernetes operations on a K3s cluster, including containerized microservices, service exposure, persistent storage, autoscaling, and operational troubleshooting in a production-style environment.`,
     tags: [
       { name: "RabbitMQ", color: "blue-text-gradient" },
       { name: "Kubernetes", color: "green-text-gradient" },
       { name: "Docker", color: "pink-text-gradient" },
       { name: "PostgreSQL", color: "blue-text-gradient" },
+      { name: "HPA", color: "green-text-gradient" },
+      { name: "Vagrant", color: "pink-text-gradient" },
     ],
     image: orc,
     sourceCodeLink: "https://github.com/SaddamHosyn/orchestrator",
@@ -155,13 +177,19 @@ const experiences = [
   {
   name: "Real-Time Forum",
   description:
-    "Built a modern single-page forum application using Go, SQLite, and Vanilla JavaScript with secure authentication, post feeds, commenting, and real-time private messaging. Implemented WebSocket-based chat with live user presence, ordered conversations, and instant updates without page reloads. Designed the frontend as a lightweight SPA with hash-based routing and dynamic DOM rendering, then containerized the application with Docker for reproducible setup and deployment.",
+  `Built a single-page forum application with Go, SQLite, and Vanilla JavaScript, combining post feeds, comments, authentication, and real-time private messaging inside a browser-based SPA. The application uses hash-based routing and dynamic DOM rendering to handle all navigation without page reloads, while Go HTTP handlers, middleware, and SQLite-backed persistence manage users, sessions, posts, comments, and chat history.
+
+Implemented secure session-based authentication with cookies, password hashing via bcrypt, and access control so only authenticated users can create posts or comments. The messaging layer uses WebSockets to support real-time private chat, live user presence, typing indicators, ordered conversation lists, and paginated chat history through scroll-based loading of older messages, with Go and SQLite coordinating concurrent connections and persistent message storage.
+
+Structured the project for reproducible development and deployment with a modular backend, single-entry SPA frontend, and Docker-based runtime.`,
   tags: [
     { name: "Golang", color: "blue-text-gradient" },
     { name: "SQLite", color: "green-text-gradient" },
     { name: "WebSocket", color: "pink-text-gradient" },
     { name: "JS", color: "blue-text-gradient" },
     { name: "SPA", color: "green-text-gradient" },
+    { name: "RealTimeChat", color: "pink-text-gradient" },
+    { name: "SessionAuth", color: "blue-text-gradient" },
   ],
   image: real,
   sourceCodeLink: "https://github.com/SaddamHosyn/real-time-forum",
@@ -171,21 +199,21 @@ const experiences = [
 ];
 const projects: TProject[] = [
   {
-    name: "Net-Cat",
+    name: "Groupie Tracker Visualization",
     description:
-      "Built a concurrent TCP chat server in Go supporting multiple simultaneous client connections, message broadcasting, and timestamped chat history. Managed concurrent connections using Goroutines and channels, handling client join/leave events, nicknames, and graceful disconnections.",
+  `Built a Go-based web app. that integrates multiple JSON API endpoints to present structured information about artists, bands, concert locations, event dates, and related entities through a responsive browser interface. The backend retrieves, parses, and combines artist, location, date, and relation resources into coherent views, and event-driven UI interactions let users explore the data without dealing with API complexity. Implemented all server logic in Go with clean request handling, resilient error management, and maintainable code structure, then served the UI via HTML/CSS for interactivity. The result is an easily deployable local web service that demonstrates practical API consumption, transformation of distributed JSON data into usable views, and client-server app. design in Go.`,
     tags: [
       { name: "Golang", color: "blue-text-gradient" },
-      { name: "TCP", color: "green-text-gradient" },
-      { name: "Concurrency", color: "pink-text-gradient" },
+      { name: "Filtering", color: "green-text-gradient" },
+      { name: "APIIntegration", color: "pink-text-gradient" },
     ],
     image: net,
-    sourceCodeLink: "https://github.com/SaddamHosyn/Net-Cat",
+    sourceCodeLink: "https://github.com/SaddamHosyn/Groupie-Tracker-Visualization.git",
   },
   {
     name: "NLP Scrapper",
     description:
-      "Developed a news intelligence pipeline using Python and BeautifulSoup, automating scraping of 300+ articles into a structured SQL database. Implemented NLP processing with SpaCy and NLTK for named entity detection, topic classification (>95% accuracy), and sentiment analysis. Engineered a scandal detection system using word embeddings and distance metrics.",
+  `An automated pipeline that scrapes live news from The Guardian and runs each article through four NLP techniques to extract meaningful insights at scale. Named Entity Recognition via SpaCy identifies organizations mentioned across articles with ~89% precision, averaging 9.2 entities per article. Topic classification uses a Linear SVM with TF-IDF vectorization trained on 2,000+ BBC articles, reaching >95% accuracy across five categories. Across 147 articles, overall sentiment averaged +0.178. Politics was the most positive topic at +0.40, Sport the most negative at –0.12. Over 200 unique organizations were detected, and 10.2% of articles were flagged as high scandal risk.The main challenge was false positives in scandal detection — words like "toxic" triggering in sports contexts — pointing toward BERT-based contextual embeddings as the next improvement.`,
     tags: [
       { name: "Python", color: "blue-text-gradient" },
       { name: "SpaCy", color: "green-text-gradient" },
@@ -197,7 +225,7 @@ const projects: TProject[] = [
   {
     name: "Kaggle Titanic",
     description:
-      "Built a machine learning project with advanced feature engineering (imputation, categorical encoding) achieving ~82-84% accuracy. Developed and evaluated ensemble models (Stacking/Voting with XGBoost, LightGBM, Random Forest) using Scikit-Learn pipelines. Structured the project for reproducibility with organized notebooks, data, and dependencies.",
+  `ML pipeline predicted Titanic survival by comparing 9 models to find what truly generalizes. Feature engineering drove most of the value: age imputation via IterativeImputer, derived features including deck, title, fare per person, and family flags like IsMother and ChildAlone. The strongest was TicketSurvivalRate — capturing group survival dynamics — where families of 5+ survived at 20–30% versus 50–60% for smaller groups. Key finding was the overfitting paradox: Tuned XGBoost hit 85% CV but collapsed to 76.5% on Kaggle (8.4% gap), while Logistic Regression with C=0.1 won with 81% CV and 78.2% Kaggle (2.8% gap) — learned one robust pattern: female + first/second class = survive. Stacking XGBoost, LightGBM, and Random Forest failed because three overfit models voting together are still three overfit models. Lower training accuracy does not mean a worse model — it means a better generalization.`,
     tags: [
       { name: "Python", color: "blue-text-gradient" },
       { name: "XGBoost", color: "green-text-gradient" },

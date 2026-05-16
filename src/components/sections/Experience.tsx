@@ -33,11 +33,16 @@ const ExperienceCard: React.FC<TExperienceCard> = (experience) => {
         </div>
       }
     >
-      <div className="relative h-[230px] w-full">
+      {/* 
+        Changes made here:
+        1. Removed h-[230px] from the parent div.
+        2. Changed img class to 'w-full h-auto object-cover'. 
+      */}
+      <div className="relative w-full overflow-hidden rounded-2xl bg-white"> 
         <img
           src={experience.image}
           alt={experience.name}
-          className="h-full w-full rounded-2xl object-cover"
+          className="w-full h-auto rounded-2xl object-cover" 
         />
         <div className="card-img_hover absolute inset-0 m-3 flex justify-end">
           <div
@@ -55,7 +60,8 @@ const ExperienceCard: React.FC<TExperienceCard> = (experience) => {
 
       <div className="mt-5">
         <h3 className="text-[24px] font-bold text-white">{experience.name}</h3>
-        <p className="text-secondary mt-2 text-[14px]">
+        {/* Added whitespace-pre-line so your detailed wheat project formatting works */}
+        <p className="text-secondary mt-2 text-[14px] whitespace-pre-line">
           {experience.description}
         </p>
       </div>
@@ -76,13 +82,13 @@ const Experience = () => {
     <>
       <Header useMotion={true} {...config.sections.experience} />
 
-      <div className="mt-20 flex flex-col">
-  <VerticalTimeline animate={false}>
-    {experiences.map((experience, index) => (
-      <ExperienceCard key={index} {...experience} />
-    ))}
-  </VerticalTimeline>
-</div>
+      <div className="mt-5 flex flex-col">
+        <VerticalTimeline animate={false}>
+          {experiences.map((experience, index) => (
+            <ExperienceCard key={index} {...experience} />
+          ))}
+        </VerticalTimeline>
+      </div>
     </>
   );
 };

@@ -222,3 +222,11 @@ a *, button *, svg, img {
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
+
+/* Break the library's hardcoded 1170px limit and let it fill the parent container */
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline {
+    width: 102% !important;       /* This overrides the library's hardcoded 1170px */
+    max-width: 102% !important;   /* This ensures it stretches to the full wrapper size */
+  }
+}
