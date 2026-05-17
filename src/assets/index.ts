@@ -35,7 +35,7 @@ import carrent from "./wheat.png";
 import bi from "./bi.png";
 import buy from "./buy.png";
 import real from "./real.png";
-import net from "./net.png";
+import gro from "./gro.png";
 import orc from "./orc.png";
 import nlp from "./nlp.png";
 import kag from "./kag.png";
@@ -75,7 +75,7 @@ export {
   bi,
   buy,
   real,
-  net,
+  gro,
   orc,
   kag,
   nlp,

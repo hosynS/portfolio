@@ -29,7 +29,7 @@ import {
   kag,
   nlp,
   real,
-  net,
+  gro,
   orc,
   carrent,
   networkAdmin,
@@ -207,7 +207,7 @@ const projects: TProject[] = [
       { name: "Filtering", color: "green-text-gradient" },
       { name: "APIIntegration", color: "pink-text-gradient" },
     ],
-    image: net,
+    image: gro,
     sourceCodeLink: "https://github.com/SaddamHosyn/Groupie-Tracker-Visualization.git",
   },
   {
