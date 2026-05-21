@@ -26,7 +26,6 @@ import {
   flask,
   bi,
   buy,
-  kag,
   nlp,
   real,
   gro,
@@ -38,6 +37,7 @@ import {
   robot,
   analytics,
   statistics,
+  det,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -74,6 +74,27 @@ const technologies: TTechnology[] = [
 ];
 
 const experiences = [
+    {
+    name: "BI-Solution-Course-Project",
+    description: `Built an end-to-end BI solution for a grocery retail chain in Åland, to analyze market penetration, per-capita grocery spending, and tourism-driven seasonal demand across all 12 municipalities. Solved a multi-source data integration problem by ingesting daily JSON sales logs, ÅSUB demographic API data, and tourism CSV files into a unified DuckDB warehouse.
+
+Designed the pipeline using a Medallion ELT architecture with Bronze, Silver, and Gold layers. Implemented raw ingestion in Python, cleaned and standardized cross-source data in SQL/Python, and modeled business-ready aggregates for municipality revenue, per-capita spend, seasonal sales trends, and YoY growth. Used dbt for modular transformations and GNU Make to orchestrate reproducible pipeline execution.
+
+Delivered an interactive Streamlit dashboard with KPI views, municipality deep dives, and product-seasonality analysis. The system processed 5M+ sales records and surfaced business metrics such as €101M+ revenue, 204,579 transactions, and Kökar as the highest per-capita spending municipality in the 2025 analysis.`,
+    tags: [
+      { name: "Python", color: "blue-text-gradient" },
+      { name: "DuckDB", color: "green-text-gradient" },
+      { name: "Streamlit", color: "pink-text-gradient" },
+      { name: "ELT", color: "blue-text-gradient" },
+      { name: "dbt", color: "green-text-gradient" },
+      { name: "SQL", color: "pink-text-gradient" },
+      { name: "DataPipelines", color: "blue-text-gradient" },
+    ],
+    image: bi,
+    sourceCodeLink: "https://github.com/SaddamHosyn/bi-solution-course-project",
+    icon: robot,
+    iconBg: "#E6DEDD",
+  },
   {
     name: "Wheat Disease Detection",
     description: 
@@ -96,27 +117,7 @@ const experiences = [
     icon: programmer,
     iconBg: "#383E56",
   },
-  {
-    name: "BI-Solution-Course-Project",
-    description: `Built an end-to-end BI solution for a grocery retail chain in Åland, to analyze market penetration, per-capita grocery spending, and tourism-driven seasonal demand across all 12 municipalities. Solved a multi-source data integration problem by ingesting daily JSON sales logs, ÅSUB demographic API data, and tourism CSV files into a unified DuckDB warehouse.
 
-Designed the pipeline using a Medallion ELT architecture with Bronze, Silver, and Gold layers. Implemented raw ingestion in Python, cleaned and standardized cross-source data in SQL/Python, and modeled business-ready aggregates for municipality revenue, per-capita spend, seasonal sales trends, and YoY growth. Used dbt for modular transformations and GNU Make to orchestrate reproducible pipeline execution.
-
-Delivered an interactive Streamlit dashboard with KPI views, municipality deep dives, and product-seasonality analysis. The system processed 5M+ sales records and surfaced business metrics such as €101M+ revenue, 204,579 transactions, and Kökar as the highest per-capita spending municipality in the 2025 analysis.`,
-    tags: [
-      { name: "Python", color: "blue-text-gradient" },
-      { name: "DuckDB", color: "green-text-gradient" },
-      { name: "Streamlit", color: "pink-text-gradient" },
-      { name: "ELT", color: "blue-text-gradient" },
-      { name: "dbt", color: "green-text-gradient" },
-      { name: "SQL", color: "pink-text-gradient" },
-      { name: "DataPipelines", color: "blue-text-gradient" },
-    ],
-    image: bi,
-    sourceCodeLink: "https://github.com/SaddamHosyn/bi-solution-course-project",
-    icon: robot,
-    iconBg: "#E6DEDD",
-  },
   {
     name: "Buy-02",
     description:
@@ -201,7 +202,7 @@ const projects: TProject[] = [
   {
     name: "Groupie Tracker Visualization",
     description:
-  `Built a Go-based web app. that integrates multiple JSON API endpoints to present structured information about artists, bands, concert locations, event dates, and related entities through a responsive browser interface. The backend retrieves, parses, and combines artist, location, date, and relation resources into coherent views, and event-driven UI interactions let users explore the data without dealing with API complexity. Implemented all server logic in Go with clean request handling, resilient error management, and maintainable code structure, then served the UI via HTML/CSS for interactivity. The result is an easily deployable local web service that demonstrates practical API consumption, transformation of distributed JSON data into usable views, and client-server app. design in Go.`,
+  `Built a Go-based web app that integrates multiple JSON API endpoints to present structured information about artists, bands, concert locations, event dates, and related entities through a responsive browser interface. The backend retrieves, parses, and combines artist, location, date, and relation resources into coherent views, while event-driven UI interactions let users explore data without dealing with API complexity. Server logic is implemented in Go with clean request handling, resilient error management, and maintainable code structure, with the UI served via HTML/CSS. The result is an easily deployable local web service demonstrating practical API consumption, transformation of distributed JSON data into usable views, and client-server app design.`,
     tags: [
       { name: "Golang", color: "blue-text-gradient" },
       { name: "Filtering", color: "green-text-gradient" },
@@ -213,7 +214,7 @@ const projects: TProject[] = [
   {
     name: "NLP Scrapper",
     description:
-  `An automated pipeline that scrapes live news from The Guardian and runs each article through four NLP techniques to extract meaningful insights at scale. Named Entity Recognition via SpaCy identifies organizations mentioned across articles with ~89% precision, averaging 9.2 entities per article. Topic classification uses a Linear SVM with TF-IDF vectorization trained on 2,000+ BBC articles, reaching >95% accuracy across five categories. Across 147 articles, overall sentiment averaged +0.178. Politics was the most positive topic at +0.40, Sport the most negative at –0.12. Over 200 unique organizations were detected, and 10.2% of articles were flagged as high scandal risk.The main challenge was false positives in scandal detection — words like "toxic" triggering in sports contexts — pointing toward BERT-based contextual embeddings as the next improvement.`,
+  `An automated pipeline scrapes live news from The Guardian and runs each article through four NLP techniques to extract meaningful insights at scale. Named Entity Recognition via SpaCy identifies organizations across articles with ~89% precision, averaging 9.2 entities per article. Topic classification uses a Linear SVM with TF-IDF vectorization trained on 2,000+ BBC articles, achieving >95% accuracy across five categories. Across 147 articles, overall sentiment averaged +0.178 — Politics was the most positive topic at +0.40, Sport the most negative at –0.12. Over 200 unique organizations were detected, and 10.2% of articles were flagged as high scandal risk. The main challenge was false positives in scandal detection — words like "toxic" triggering in sports contexts — pointing toward BERT-based contextual embeddings as the next improvement.`,
     tags: [
       { name: "Python", color: "blue-text-gradient" },
       { name: "SpaCy", color: "green-text-gradient" },
@@ -223,16 +224,18 @@ const projects: TProject[] = [
     sourceCodeLink: "https://github.com/SaddamHosyn/nlp-scapper",
   },
   {
-    name: "Kaggle Titanic",
+    name: "Detecto",
     description:
-  `ML pipeline predicted Titanic survival by comparing 9 models to find what truly generalizes. Feature engineering drove most of the value: age imputation via IterativeImputer, derived features including deck, title, fare per person, and family flags like IsMother and ChildAlone. The strongest was TicketSurvivalRate — capturing group survival dynamics — where families of 5+ survived at 20–30% versus 50–60% for smaller groups. Key finding was the overfitting paradox: Tuned XGBoost hit 85% CV but collapsed to 76.5% on Kaggle (8.4% gap), while Logistic Regression with C=0.1 won with 81% CV and 78.2% Kaggle (2.8% gap) — learned one robust pattern: female + first/second class = survive. Stacking XGBoost, LightGBM, and Random Forest failed because three overfit models voting together are still three overfit models. Lower training accuracy does not mean a worse model — it means a better generalization.`,
+  `Designed and built an end-to-end computer vision system for real-time person detection and counting using YOLOv8, automating manual monitoring and enabling continuous coverage in monitored spaces. In tests on sample footage, the system achieved over 85% detection accuracy with under 10% false positives and average inference times below 1.5 seconds, making it suitable for near real-time safety and occupancy use cases. A FastAPI inference service and React dashboard visualize live detections, historical trends, and confidence metrics, while structured logging of each event supports auditing, performance tuning, and data-driven operational decisions.`,
     tags: [
-      { name: "Python", color: "blue-text-gradient" },
-      { name: "XGBoost", color: "green-text-gradient" },
-      { name: "Scikit-Learn", color: "pink-text-gradient" },
+      { name: "YOLOv8", color: "blue-text-gradient" },
+      { name: "FastAPI", color: "green-text-gradient" },
+      { name: "React", color: "pink-text-gradient" },
+
+      
     ],
-    image: kag,
-    sourceCodeLink: "https://github.com/SaddamHosyn/kaggletitanic",
+    image: det,
+    sourceCodeLink: "https://github.com/SaddamHosyn/detecto.git",
   },
 ];
 const certifications: TCertification[] = [

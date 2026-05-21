@@ -31,7 +31,9 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
             <img
               src={image}
               alt={name}
-              className="h-full w-full rounded-2xl object-cover"
+              className={`h-full w-full rounded-2xl ${
+                name === "Detecto" ? "object-contain bg-black" : "object-cover"
+              }`}
             />
             <div className="card-img_hover absolute inset-0 m-3 flex justify-end">
               <div

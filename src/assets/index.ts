@@ -38,7 +38,7 @@ import real from "./real.png";
 import gro from "./gro.png";
 import orc from "./orc.png";
 import nlp from "./nlp.png";
-import kag from "./kag.png";
+import det from "./det.png";
 
 export {
   logo,
@@ -77,6 +77,6 @@ export {
   real,
   gro,
   orc,
-  kag,
   nlp,
+  det,
 };
