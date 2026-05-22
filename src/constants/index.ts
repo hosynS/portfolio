@@ -23,7 +23,7 @@ import {
   postgresql,
   kafka,
   streamlit,
-  flask,
+  java,
   bi,
   buy,
   nlp,
@@ -42,8 +42,8 @@ import {
 
 export const navLinks: TNavLink[] = [
   { id: "about", title: "About" },
-  { id: "projects", title: "Projects" },
   { id: "tech-stack", title: "Tech Stack" },
+  { id: "projects", title: "Projects" },
   { id: "certifications", title: "Certifications" },
   { id: "contact", title: "Contact" },
 ];
@@ -61,6 +61,7 @@ const technologies: TTechnology[] = [
   { name: "Python", icon: python },
   { name: "JavaScript", icon: javascript },
   { name: "TypeScript", icon: typescript },
+  { name: "Java", icon: java },
   { name: "Go", icon: golang },
   { name: "Bash", icon: bash },
   { name: "PyTorch", icon: pytorch },
@@ -70,12 +71,11 @@ const technologies: TTechnology[] = [
   { name: "PostgreSQL", icon: postgresql },
   { name: "Kafka", icon: kafka },
   { name: "Streamlit", icon: streamlit },
-  { name: "Flask", icon: flask },
 ];
 
 const experiences = [
     {
-    name: "BI-Solution-Course-Project",
+    name: "BI-Solution-Project",
     description: `Built an end-to-end BI solution for a grocery retail chain in Åland, to analyze market penetration, per-capita grocery spending, and tourism-driven seasonal demand across all 12 municipalities. Solved a multi-source data integration problem by ingesting daily JSON sales logs, ÅSUB demographic API data, and tourism CSV files into a unified DuckDB warehouse.
 
 Designed the pipeline using a Medallion ELT architecture with Bronze, Silver, and Gold layers. Implemented raw ingestion in Python, cleaned and standardized cross-source data in SQL/Python, and modeled business-ready aggregates for municipality revenue, per-capita spend, seasonal sales trends, and YoY growth. Used dbt for modular transformations and GNU Make to orchestrate reproducible pipeline execution.

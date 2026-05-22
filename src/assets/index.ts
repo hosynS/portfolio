@@ -22,7 +22,7 @@ import githubIcon from "./tech/GitHub.svg";
 import postgresql from "./tech/postgresql.png";
 import kafka from "./tech/kafka.png";
 import streamlit from "./tech/streamlit.png";
-import flask from "./tech/flask.png";
+import java from "./tech/java.png";
 
 import developer from "./company/developer.png";
 import networkAdmin from "./company/network-admin.png";
@@ -64,7 +64,7 @@ export {
   postgresql,
   kafka,
   streamlit,
-  flask,
+  java,
   developer,
   networkAdmin,
   programmer,

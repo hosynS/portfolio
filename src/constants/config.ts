@@ -68,8 +68,8 @@ export const config: TConfig = {
   sections: {
     about: {
       p: "Introduction",
-      h2: "Overview.",
-      content: `I am a software engineer focused on backend systems, DevOps practices, and data-driven applications, with growing interest in machine learning and AI. I enjoy building scalable and reliable systems, working on APIs, infrastructure automation, and CI/CD workflows. I work across languages like Go, Python, Bash, and TypeScript, and I design systems that are maintainable, production-ready, and suitable for real-world use. I’m especially interested in how backend systems, data workflows, and intelligent features can come together to build efficient applications!`,
+      h2: "About Me.",
+      content: `I am a software engineer focused on backend systems, DevOps practices, and data-driven applications, with growing interest in machine learning and AI. I enjoy building scalable and reliable systems, working on APIs, infrastructure automation, and CI/CD workflows. I work across languages like Go, Python, Java,Bash, and TypeScript, and I design systems that are maintainable, production-ready, and suitable for real-world use. I’m especially interested in how backend systems, data workflows, and intelligent features can come together to build efficient applications!`,
     },
       
     experience: {
@@ -78,7 +78,7 @@ export const config: TConfig = {
     },
     techStack: {
        p: "Tools & technologies I work with",
-      h2: "Tech Stack.",
+      h2: "Tech Skills.",
   },
     feedbacks: {
       p: "What others say",
@@ -86,8 +86,8 @@ export const config: TConfig = {
     },
     works: {
       p: "What else I've built",
-      h2: "Other Projects.",
-      content: `These projects complement my main portfolio by highlighting additional technical experience, practical problem-solving, and work across a broader range of tools and technologies. Together, they reflect my adaptability, curiosity, and ability to apply my skills in different contexts.`,
+      h2: "Personal Ventures.",
+      content: `The  following projects highlight my technical experience, practical problem-solving, and work across a broader range of tools and technologies. Together with other projects, they reflect my adaptability, curiosity, and ability to apply my skills in different contexts.`,
     },
     certifications: {
       p: "What I have earned",
