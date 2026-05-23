@@ -53,6 +53,12 @@ a *, button *, svg, img {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.hexagon-bg {
+  background: rgba(29, 24, 54, 0.7);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5), inset 0px 4px 4px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .violet-gradient {
   background: #804dee;
   background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);

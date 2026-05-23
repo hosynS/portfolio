@@ -26,7 +26,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
         tiltMaxAngleY={30}
         glareColor="#aaa6c3"
       >
-        <div className="bg-tertiary w-full rounded-2xl p-5 sm:w-[300px]">
+        <div className="bg-tertiary w-full rounded-2xl p-5 sm:w-[360px]">
           <div className="relative h-[230px] w-full">
             <img
               src={image}
@@ -50,7 +50,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
           </div>
           <div className="mt-5">
             <h3 className="text-[24px] font-bold text-white">{name}</h3>
-            <p className="text-secondary mt-2 text-[14px]">{description}</p>
+            <p className="text-secondary mt-2 text-[14px] whitespace-pre-line">{description}</p>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             {tags.map((tag) => (
@@ -69,6 +69,17 @@ const Works = () => {
   return (
     <>
       <Header useMotion={true} {...config.sections.works} />
+      
+      <motion.a
+        variants={fadeIn("", "", 0.1, 1)}
+        href="https://github.com/SaddamHosyn"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 inline-flex items-center gap-2 text-secondary hover:text-white transition-colors text-[14px] border border-[#4f86c6] hover:border-[#93c5fd] rounded-full px-4 py-2"
+      >
+        <img src={github} alt="GitHub" className="w-4 h-4 object-contain" />
+        GitHub Profile →
+      </motion.a>
 
       <div className="flex w-full">
         <motion.p
@@ -78,16 +89,6 @@ const Works = () => {
           {config.sections.works.content}
         </motion.p>
       </div>
-
-       <a
-  href="https://github.com/SaddamHosyn"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mt-4 inline-flex items-center gap-2 text-secondary hover:text-white transition-colors text-[14px] border border-[#4f86c6] hover:border-[#93c5fd] rounded-full px-4 py-2"
->
-  <img src={github} alt="GitHub" className="w-4 h-4 object-contain" />
-  View GitHub Profile →
-</a>
 
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (

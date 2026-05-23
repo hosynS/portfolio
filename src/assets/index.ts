@@ -10,7 +10,7 @@ import close from "./close.svg";
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import git from "./tech/git.png";
-import javascript from "./tech/javascript.png";
+import dbt from "./tech/dbt.png";
 import mongodb from "./tech/mongodb.png";
 import reactjs from "./tech/reactjs.png";
 import typescript from "./tech/typescript.png";
@@ -21,7 +21,7 @@ import bash from "./tech/bash.png";
 import githubIcon from "./tech/GitHub.svg";
 import postgresql from "./tech/postgresql.png";
 import kafka from "./tech/kafka.png";
-import streamlit from "./tech/streamlit.png";
+import kube from "./tech/kube.png";
 import java from "./tech/java.png";
 
 import developer from "./company/developer.png";
@@ -52,7 +52,7 @@ export {
   css,
   docker,
   git,
-  javascript,
+  dbt,
   mongodb,
   reactjs,
   typescript,
@@ -63,7 +63,7 @@ export {
   githubIcon,
   postgresql,
   kafka,
-  streamlit,
+  kube,
   java,
   developer,
   networkAdmin,

@@ -3,6 +3,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
+import { motion } from "framer-motion";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -11,6 +12,7 @@ import { github } from "../../assets";
 import { SectionWrapper } from "../../hoc";
 import { Header } from "../atoms/Header";
 import { config } from "../../constants/config";
+import { fadeIn } from "../../utils/motion";
 
 type TExperienceCard = (typeof experiences)[number];
 
@@ -81,6 +83,17 @@ const Experience = () => {
   return (
     <>
       <Header useMotion={true} {...config.sections.experience} />
+      
+      <motion.a
+        variants={fadeIn("", "", 0.1, 1)}
+        href="https://github.com/SaddamHosyn"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 inline-flex items-center gap-2 text-secondary hover:text-white transition-colors text-[14px] border border-[#4f86c6] hover:border-[#93c5fd] rounded-full px-4 py-2"
+      >
+        <img src={github} alt="GitHub" className="w-4 h-4 object-contain" />
+        GitHub Profile →
+      </motion.a>
 
       <div className="mt-5 flex flex-col">
         <VerticalTimeline animate={false}>

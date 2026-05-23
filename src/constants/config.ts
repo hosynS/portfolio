@@ -48,7 +48,7 @@ export const config: TConfig = {
   },
   hero: {
     name: "Saddam Hussain",
-    p: ["Great code matters, but so does the team behind it."],
+    p: ["Code can win the day, but a team wins the long game."],
   },
   contact: {
     p: "Get in touch",
@@ -69,7 +69,7 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "About Me.",
-      content: `I am a software engineer focused on backend systems, DevOps practices, and data-driven applications, with growing interest in machine learning and AI. I enjoy building scalable and reliable systems, working on APIs, infrastructure automation, and CI/CD workflows. I work across languages like Go, Python, Java,Bash, and TypeScript, and I design systems that are maintainable, production-ready, and suitable for real-world use. I’m especially interested in how backend systems, data workflows, and intelligent features can come together to build efficient applications!`,
+      content: `I am a software engineer focused on backend systems, DevOps practices, and data-driven applications, with an interest in machine learning and AI. I enjoy building scalable APIs, distributed systems, and reliable infrastructure with a focus on maintainability and performance. I work with Go, Python, Java, Bash, and TypeScript, and I have experience with CI/CD pipelines, containerization, and system automation. I’m particularly interested in how backend systems, data workflows, and intelligent features can be combined to build efficient and practical applications!`,
     },
       
     experience: {
@@ -87,7 +87,7 @@ export const config: TConfig = {
     works: {
       p: "What else I've built",
       h2: "Personal Ventures.",
-      content: `The  following projects highlight my technical experience, practical problem-solving, and work across a broader range of tools and technologies. Together with other projects, they reflect my adaptability, curiosity, and ability to apply my skills in different contexts.`,
+      content: `These projects highlight my technical experience, practical problem-solving, and work across a broader range of tools and technologies. Together with other projects, they reflect my adaptability, curiosity, and ability to apply my skills in different contexts.`,
     },
     certifications: {
       p: "What I have earned",

@@ -11,7 +11,7 @@ import {
   backend,
   creator,
   web,
-  javascript,
+ dbt,
   typescript,
   mongodb,
   git,
@@ -22,7 +22,6 @@ import {
   bash,
   postgresql,
   kafka,
-  streamlit,
   java,
   bi,
   buy,
@@ -38,19 +37,20 @@ import {
   analytics,
   statistics,
   det,
+  kube,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
   { id: "about", title: "About" },
-  { id: "tech-stack", title: "Tech Stack" },
+  { id: "tech-skills", title: "Tech Skills" },
   { id: "projects", title: "Projects" },
   { id: "certifications", title: "Certifications" },
   { id: "contact", title: "Contact" },
 ];
 
 const services: TService[] = [
-  { title: "Backend Development", icon: web },
-  { title: "Integration Engineering", icon: creator },
+  { title: "Backend Engineering", icon: web },
+  { title: "System Integration", icon: creator },
   { title: "DevOps Engineering", icon: mobile },
   { title: "Data Engineering", icon: backend },
   
@@ -59,7 +59,6 @@ const services: TService[] = [
 
 const technologies: TTechnology[] = [
   { name: "Python", icon: python },
-  { name: "JavaScript", icon: javascript },
   { name: "TypeScript", icon: typescript },
   { name: "Java", icon: java },
   { name: "Go", icon: golang },
@@ -67,20 +66,27 @@ const technologies: TTechnology[] = [
   { name: "PyTorch", icon: pytorch },
   { name: "Docker", icon: docker },
   { name: "Git", icon: git },
+  { name: "dbt", icon: dbt },
   { name: "MongoDB", icon: mongodb },
   { name: "PostgreSQL", icon: postgresql },
   { name: "Kafka", icon: kafka },
-  { name: "Streamlit", icon: streamlit },
+  { name: "Kubernetes", icon: kube },
 ];
 
 const experiences = [
     {
     name: "BI-Solution-Project",
-    description: `Built an end-to-end BI solution for a grocery retail chain in Åland, to analyze market penetration, per-capita grocery spending, and tourism-driven seasonal demand across all 12 municipalities. Solved a multi-source data integration problem by ingesting daily JSON sales logs, ÅSUB demographic API data, and tourism CSV files into a unified DuckDB warehouse.
+   description: `• Built an end-to-end BI solution analyzing market penetration, tourism demand, and per-capita spending across 12 Åland municipalities.
 
-Designed the pipeline using a Medallion ELT architecture with Bronze, Silver, and Gold layers. Implemented raw ingestion in Python, cleaned and standardized cross-source data in SQL/Python, and modeled business-ready aggregates for municipality revenue, per-capita spend, seasonal sales trends, and YoY growth. Used dbt for modular transformations and GNU Make to orchestrate reproducible pipeline execution.
+• Engineered a multi-source pipeline integrating JSON sales logs, ÅSUB demographic APIs, and tourism CSVs into a centralized DuckDB warehouse.
 
-Delivered an interactive Streamlit dashboard with KPI views, municipality deep dives, and product-seasonality analysis. The system processed 5M+ sales records and surfaced business metrics such as €101M+ revenue, 204,579 transactions, and Kökar as the highest per-capita spending municipality in the 2025 analysis.`,
+• Architected a Medallion ELT pipeline using Python for raw ingestion and SQL for cross-source standardization across Bronze, Silver, and Gold layers.
+
+• Modeled business aggregates for revenue, seasonal trends, and YoY growth using dbt and GNU Make for modular, reproducible pipelines.
+
+• Delivered an interactive Streamlit dashboard for KPI tracking, municipality deep dives, and product-seasonality analysis.
+
+• Processed 5M+ sales records to surface key 2025 insights, including €101M+ in revenue, 204,579 transactions.`,
     tags: [
       { name: "Python", color: "blue-text-gradient" },
       { name: "DuckDB", color: "green-text-gradient" },
@@ -96,34 +102,45 @@ Delivered an interactive Streamlit dashboard with KPI views, municipality deep d
     iconBg: "#E6DEDD",
   },
   {
-    name: "Wheat Disease Detection",
-    description: 
-      `Traditional agricultural disease detection methods are time-consuming and lack accuracy. Off-the-shelf deep learning models often struggle to effectively extract detailed, complex disease features from wheat fields, limiting the development of smart agriculture.
+  name: "Real-Time Forum",
+  description: `• Built a single-page forum app using Go, SQLite, and Vanilla JavaScript, integrating post feeds, comments, and real-time private messaging.
 
-      Engineered an optimized computer vision pipeline based on the YOLOv5m architecture. To enhance the network's ability to extract subtle disease details, I integrated a Squeeze-and-Excitation (SE) channel attention module directly into the feature extraction network, enabling the model to dynamically prioritize spatial details and disease dependencies.
+• Implemented hash-based routing and dynamic DOM rendering to manage seamless SPA navigation.
 
-      Constructed and augmented a dataset of 11,510 images spanning 5 wheat conditions (Healthy, Furasiam Head, Loose Smut, Powdery Mildew, Rust Leaf). Conducted systematic ablation studies, testing YOLOv5 variants (s, m, Lite) and a ShuffleNetv2 backbone, ultimately proving the SE-attention architecture was the most effective.
+• Engineered secure session-based auth using cookies and bcrypt password hashing, enforcing strict access controls for content creation.
 
-      The custom YOLOv5m-SE model achieved 82.16% precision, an 84.87% recall rate, and an 87.21% mAP@0.5. It successfully outperformed baseline models like Faster R-CNN, SSD, and YOLOv5m-ShuffleNetv2, demonstrating high accuracy even in complex field backgrounds.`,
-    tags: [
-      { name: "Python", color: "blue-text-gradient" },
-      { name: "PyTorch", color: "green-text-gradient" },
-      { name: "YOLOv5", color: "pink-text-gradient" },
-      { name: "OpenCV", color: "blue-text-gradient" },
-      { name: "DataAugmentation", color: "green-text-gradient" },
-    ],
-    image: carrent,
-    sourceCodeLink: "https://github.com/SaddamHosyn",
-    icon: programmer,
-    iconBg: "#383E56",
-  },
+• Developed a real-time WebSocket messaging layer supporting live user presence, typing indicators, and scroll-based pagination for chat history.
+
+• Coordinated WebSocket, HTTP, and SQLite in Go with middleware, and built a modular Dockerized full-stack app for reproducible deployments.
+`,
+  tags: [
+    { name: "Golang", color: "blue-text-gradient" },
+    { name: "SQLite", color: "green-text-gradient" },
+    { name: "WebSocket", color: "pink-text-gradient" },
+    { name: "JS", color: "blue-text-gradient" },
+    { name: "SPA", color: "green-text-gradient" },
+    { name: "RealTimeChat", color: "pink-text-gradient" },
+    { name: "SessionAuth", color: "blue-text-gradient" },
+  ],
+  image: real,
+  sourceCodeLink: "https://github.com/SaddamHosyn/real-time-forum",
+  icon: developer,
+  iconBg: "#383E56",
+},
 
   {
     name: "Buy-02",
-    description:
-  `Engineered a full-stack microservices e-commerce platform with Spring Boot, Angular, MongoDB, and Kafka, covering the entire flow from product browsing through cart, checkout, and order. Designed and implemented a service-oriented architecture with API Gateway, Eureka service registry, database-per-service pattern, and event-driven messaging for cascade deletions and data consistency across user, product, media, and order services.
+    description: `• Engineered a full-stack microservices e-commerce platform using Spring Boot, Angular, MongoDB, and Kafka to support end-to-end shopping flows.
 
-Built secure REST APIs with JWT-based authentication and role-based authorization (CLIENT, SELLER, ADMIN), then developed a responsive Angular SPA with shopping cart, checkout wizard, order management, profile management, and buyer/seller analytics dashboards. Containerized all services with Docker Compose and wired a Jenkins + SonarQube CI/CD pipeline that automatically builds, tests, enforces quality gates, and deploys the system on every push, providing production-style deployment steps and technical proof of maintainability and scalability.`,
+• Designed a service-oriented architecture utilizing an API Gateway, Eureka service registry, and a database-per-service pattern.
+
+• Implemented event-driven messaging to ensure cascade deletions and maintain data consistency across user, product, media, and order services.
+
+• Built secure REST APIs featuring JWT-based auth and tiered role-based authorization (CLIENT, SELLER, ADMIN).
+
+• Developed a responsive SPA featuring a shopping cart, checkout wizard, order management, and dedicated buyer/seller analytics dashboards.
+
+• Containerized all services and wired a Jenkins and SonarQube pipeline for automated builds, strict quality gates, and continuous deployment.`,
     tags: [
       { name: "Spring-Boot", color: "blue-text-gradient" },
       { name: "Angular", color: "green-text-gradient" },
@@ -139,8 +156,15 @@ Built secure REST APIs with JWT-based authentication and role-based authorizatio
   },
   {
     name: "Cloud Design",
-    description:
-      "Architected and deployed a production-style microservices platform on AWS for inventory and billing workflows. Provisioned infrastructure with Terraform, containerized services with Docker, and orchestrated workloads with Kubernetes/ECS while isolating private resources inside a VPC. Secured public access with HTTPS, managed authentication, and private database connectivity, then added observability, autoscaling, and cost controls to improve reliability under changing workloads.",
+    description: `• Architected and deployed a production-style microservices platform on AWS for inventory and billing workflows.
+
+• Provisioned cloud infrastructure as code using Terraform and containerized backend services with Docker.
+
+• Orchestrated container workloads using Kubernetes and AWS ECS, isolating private resources within a secure VPC.
+
+• Secured public API access via HTTPS and managed authentication, alongside strict private database connectivity.
+
+• Integrated observability, autoscaling, and cost controls to ensure high availability and system reliability under fluctuating workloads.`,
     tags: [
       { name: "AWS", color: "blue-text-gradient" },
       { name: "Terraform", color: "green-text-gradient" },
@@ -156,12 +180,15 @@ Built secure REST APIs with JWT-based authentication and role-based authorizatio
   },
   {
     name: "Orchestrator",
-    description:
-  `Built a production-style microservices platform by migrating a Docker Compose architecture to a two-node K3s Kubernetes cluster running on Vagrant-provisioned virtual machines. Designed the cluster with a clear separation between stateless and stateful workloads, exposing only the API gateway through NodePort while keeping PostgreSQL services internal and persisting database state with PersistentVolumeClaims.
+    description: `• Migrated a Docker Compose architecture to a production-style, two-node K3s Kubernetes cluster on Vagrant-provisioned virtual machines.
 
-Deployed and orchestrated six services using Kubernetes Deployments, StatefulSets, Services, Secrets, and Horizontal Pod Autoscalers. Implemented message-driven resilience with RabbitMQ so billing requests were accepted asynchronously and safely processed even when the billing service was temporarily offline, while all credentials were isolated in Kubernetes Secrets rather than hardcoded into manifests.
+• Architected strict workload separation, exposing the API gateway via NodePort while securing PostgreSQL internally using PVCs.
 
-Automated the full cluster lifecycle through a single orchestrator script that created VMs, installed K3s, joined the worker node, applied manifests in dependency order, and verified workloads with kubectl. The project showcases Kubernetes operations on a K3s cluster, including containerized microservices, service exposure, persistent storage, autoscaling, and operational troubleshooting in a production-style environment.`,
+• Orchestrated six microservices utilizing Kubernetes Deployments, StatefulSets, Services, and HPA.
+
+• Implemented message-driven resilience with RabbitMQ for asynchronous billing processing during downtime.
+
+• Automated the complete cluster lifecycle—including VM creation, K3s installation, node joining, dependency-ordered manifest execution, and kubectl verification—via a single orchestrator script.`,
     tags: [
       { name: "RabbitMQ", color: "blue-text-gradient" },
       { name: "Kubernetes", color: "green-text-gradient" },
@@ -176,45 +203,59 @@ Automated the full cluster lifecycle through a single orchestrator script that c
     iconBg: "#383E56",
   },
   {
-  name: "Real-Time Forum",
-  description:
-  `Built a single-page forum application with Go, SQLite, and Vanilla JavaScript, combining post feeds, comments, authentication, and real-time private messaging inside a browser-based SPA. The application uses hash-based routing and dynamic DOM rendering to handle all navigation without page reloads, while Go HTTP handlers, middleware, and SQLite-backed persistence manage users, sessions, posts, comments, and chat history.
-
-Implemented secure session-based authentication with cookies, password hashing via bcrypt, and access control so only authenticated users can create posts or comments. The messaging layer uses WebSockets to support real-time private chat, live user presence, typing indicators, ordered conversation lists, and paginated chat history through scroll-based loading of older messages, with Go and SQLite coordinating concurrent connections and persistent message storage.
-
-Structured the project for reproducible development and deployment with a modular backend, single-entry SPA frontend, and Docker-based runtime.`,
-  tags: [
-    { name: "Golang", color: "blue-text-gradient" },
-    { name: "SQLite", color: "green-text-gradient" },
-    { name: "WebSocket", color: "pink-text-gradient" },
-    { name: "JS", color: "blue-text-gradient" },
-    { name: "SPA", color: "green-text-gradient" },
-    { name: "RealTimeChat", color: "pink-text-gradient" },
-    { name: "SessionAuth", color: "blue-text-gradient" },
-  ],
-  image: real,
-  sourceCodeLink: "https://github.com/SaddamHosyn/real-time-forum",
-  icon: developer,
-  iconBg: "#383E56",
-},
-];
-const projects: TProject[] = [
-  {
     name: "Groupie Tracker Visualization",
-    description:
-  `Built a Go-based web app that integrates multiple JSON API endpoints to present structured information about artists, bands, concert locations, event dates, and related entities through a responsive browser interface. The backend retrieves, parses, and combines artist, location, date, and relation resources into coherent views, while event-driven UI interactions let users explore data without dealing with API complexity. Server logic is implemented in Go with clean request handling, resilient error management, and maintainable code structure, with the UI served via HTML/CSS. The result is an easily deployable local web service demonstrating practical API consumption, transformation of distributed JSON data into usable views, and client-server app design.`,
+    description: `• Built a Go web app integrating multiple JSON APIs to fetch, parse, and aggregate artists, concert locations, and event dates into structured views.
+
+• Developed a responsive frontend with event-driven interactions, robust HTTP handling, and error management in a clean client-server architecture.
+
+• Delivered a deployable web service demonstrating practical third-party API integration, data transformation, and scalable backend design.
+`,
     tags: [
       { name: "Golang", color: "blue-text-gradient" },
-      { name: "Filtering", color: "green-text-gradient" },
+      { name: "REST APIs", color: "green-text-gradient" },
       { name: "APIIntegration", color: "pink-text-gradient" },
+      { name: "Data Aggregation", color: "blue-text-gradient" },
+      { name: "Error Handling", color: "green-text-gradient" },
+
     ],
     image: gro,
     sourceCodeLink: "https://github.com/SaddamHosyn/Groupie-Tracker-Visualization.git",
+    icon: programmer,
+    iconBg: "#383E56",
+  },
+];
+const projects: TProject[] = [
+  {
+    name: "Wheat Disease Detection",
+        description: `• Engineered a YOLOv5m computer vision pipeline to improve agricultural disease detection over standard models.
+
+• Integrated a Squeeze-and-Excitation attention module to boost feature extraction and spatial dependency.
+
+• Augmented a custom dataset of 11,510 images across 5 wheat conditions (Healthy, Furasiam, Loose Smut, Powdery Mildew, Rust).
+
+• Validated the SE-attention architecture's superiority via ablation studies on YOLOv5 variants and ShuffleNetv2.
+
+• Achieved 82.16% precision, 84.87% recall, and 87.21% mAP@0.5, outperforming Faster R-CNN and SSD baselines.`,
+    tags: [
+      { name: "Agricultural AI", color: "blue-text-gradient" },
+      { name: "PyTorch", color: "green-text-gradient" },
+      { name: "YOLOv5", color: "pink-text-gradient" },
+     
+    ],
+    image: carrent,
+    sourceCodeLink: "https://github.com/SaddamHosyn",
   },
   {
     name: "NLP Scrapper",
-    description:
-  `An automated pipeline scrapes live news from The Guardian and runs each article through four NLP techniques to extract meaningful insights at scale. Named Entity Recognition via SpaCy identifies organizations across articles with ~89% precision, averaging 9.2 entities per article. Topic classification uses a Linear SVM with TF-IDF vectorization trained on 2,000+ BBC articles, achieving >95% accuracy across five categories. Across 147 articles, overall sentiment averaged +0.178 — Politics was the most positive topic at +0.40, Sport the most negative at –0.12. Over 200 unique organizations were detected, and 10.2% of articles were flagged as high scandal risk. The main challenge was false positives in scandal detection — words like "toxic" triggering in sports contexts — pointing toward BERT-based contextual embeddings as the next improvement.`,
+        description: `• Engineered an automated NLP pipeline to scrape live Guardian news and extract insights at scale.
+
+• Implemented SpaCy NER to detect 200+ unique organizations with ~89% precision.
+
+• Trained a TF-IDF vectorized Linear SVM, achieving >95% classification accuracy across five topics.
+
+• Analyzed sentiment across 147 articles (Politics +0.40, Sport -0.12) and flagged 10.2% for scandal risk.
+
+• Identified contextual edge cases to guide future BERT-based model improvements.`,
     tags: [
       { name: "Python", color: "blue-text-gradient" },
       { name: "SpaCy", color: "green-text-gradient" },
@@ -225,14 +266,18 @@ const projects: TProject[] = [
   },
   {
     name: "Detecto",
-    description:
-  `Designed and built an end-to-end computer vision system for real-time person detection and counting using YOLOv8, automating manual monitoring and enabling continuous coverage in monitored spaces. In tests on sample footage, the system achieved over 85% detection accuracy with under 10% false positives and average inference times below 1.5 seconds, making it suitable for near real-time safety and occupancy use cases. A FastAPI inference service and React dashboard visualize live detections, historical trends, and confidence metrics, while structured logging of each event supports auditing, performance tuning, and data-driven operational decisions.`,
+        description: `• Engineered an end-to-end YOLOv8 computer vision system for real-time person detection and occupancy counting.
+
+• Achieved >85% accuracy and <10% false positives with <1.5s inference for near real-time monitoring.
+
+• Built a FastAPI service and React dashboard to visualize live detections, trends, and confidence metrics.
+
+• Implemented structured event logging for operational auditing, system tuning, and data-driven safety decisions.`,
     tags: [
       { name: "YOLOv8", color: "blue-text-gradient" },
       { name: "FastAPI", color: "green-text-gradient" },
       { name: "React", color: "pink-text-gradient" },
-
-      
+      { name: "Deep Learning", color: "blue-text-gradient" },
     ],
     image: det,
     sourceCodeLink: "https://github.com/SaddamHosyn/detecto.git",
