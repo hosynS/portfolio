@@ -26,7 +26,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
         tiltMaxAngleY={30}
         glareColor="#aaa6c3"
       >
-        <div className="bg-tertiary w-full rounded-2xl p-5 sm:w-[360px]">
+        <div className="bg-tertiary w-full sm:w-[360px] md:w-[660px] lg:w-[360px] rounded-2xl p-5">
           <div className="relative h-[230px] w-full">
             <img
               src={image}

@@ -22,7 +22,7 @@ import githubIcon from "./tech/GitHub.svg";
 import postgresql from "./tech/postgresql.png";
 import kafka from "./tech/kafka.png";
 import kube from "./tech/kube.png";
-import java from "./tech/java.png";
+import spring from "./tech/spring.png";
 
 import developer from "./company/developer.png";
 import networkAdmin from "./company/network-admin.png";
@@ -39,6 +39,7 @@ import gro from "./gro.png";
 import orc from "./orc.png";
 import nlp from "./nlp.png";
 import det from "./det.png";
+import cloud from "./cloud.png";
 
 export {
   logo,
@@ -64,7 +65,7 @@ export {
   postgresql,
   kafka,
   kube,
-  java,
+  spring,
   developer,
   networkAdmin,
   programmer,
@@ -75,6 +76,7 @@ export {
   bi,
   buy,
   real,
+  cloud,
   gro,
   orc,
   nlp,

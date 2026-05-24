@@ -49,8 +49,16 @@ const About = () => {
     <>
       <Header useMotion={true} {...config.sections.about} />
 
-      <div className="flex flex-col md:flex-row items-center gap-10 mt-4">
-        <motion.div variants={fadeIn("right", "spring", 0.3, 1)} className="flex-shrink-0">
+            <div className="flex flex-col md:flex-row items-center gap-10 mt-4">
+        <motion.div 
+  variants={fadeIn("right", "spring", 0.3, 1)} 
+  className="flex-shrink-0"
+  style={
+    typeof window !== "undefined" && window.innerWidth < 768
+      ? { alignSelf: "flex-start", marginLeft: "-1.5rem" }
+      : {}
+  }
+>
           <img 
             src={another} 
             alt="Saddam Hussain" 

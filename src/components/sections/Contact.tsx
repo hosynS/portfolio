@@ -66,10 +66,10 @@ const Contact = () => {
   };
 
   return (
-    <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-4 xl:gap-10 overflow-hidden`}>
+    <div className={`-my-10 sm:my-0 mt-0 xl:mt-12 flex flex-col xl:flex-row xl:gap-10 gap-0 overflow-hidden`}>
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="bg-black-100 flex-[0.75] rounded-2xl p-8 max-w-full"
+        className="bg-black-100 flex-[0.75] rounded-2xl p-4 sm:p-8 max-w-full"
       >
         <Header useMotion={false} {...config.contact} />
 
@@ -150,7 +150,7 @@ const Contact = () => {
 
       <motion.div
   variants={slideIn("right", "tween", 0.2, 1)}
-  className="h-[250px] md:h-[550px] xl:h-auto flex-1 w-full flex items-center justify-center overflow-visible"
+  className="h-[80px] sm:h-[200px] md:h-[350px] xl:h-auto flex-1 w-full flex items-center justify-center overflow-visible"
 >
   <EarthCanvas />
 </motion.div>

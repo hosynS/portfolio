@@ -22,6 +22,7 @@ const ExperienceCard: React.FC<TExperienceCard> = (experience) => {
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
+        boxShadow: "none",
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       iconStyle={{ background: experience.iconBg }}

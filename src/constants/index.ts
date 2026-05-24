@@ -11,7 +11,7 @@ import {
   backend,
   creator,
   web,
- dbt,
+  dbt,
   typescript,
   mongodb,
   git,
@@ -22,9 +22,10 @@ import {
   bash,
   postgresql,
   kafka,
-  java,
+  spring,
   bi,
   buy,
+  cloud,
   nlp,
   real,
   gro,
@@ -58,10 +59,10 @@ const services: TService[] = [
 ];
 
 const technologies: TTechnology[] = [
-  { name: "Python", icon: python },
-  { name: "TypeScript", icon: typescript },
-  { name: "Java", icon: java },
   { name: "Go", icon: golang },
+  { name: "TypeScript", icon: typescript },
+  { name: "Spring Boot", icon: spring },
+  { name: "Python", icon: python },
   { name: "Bash", icon: bash },
   { name: "PyTorch", icon: pytorch },
   { name: "Docker", icon: docker },
@@ -120,7 +121,6 @@ const experiences = [
     { name: "JS", color: "blue-text-gradient" },
     { name: "SPA", color: "green-text-gradient" },
     { name: "RealTimeChat", color: "pink-text-gradient" },
-    { name: "SessionAuth", color: "blue-text-gradient" },
   ],
   image: real,
   sourceCodeLink: "https://github.com/SaddamHosyn/real-time-forum",
@@ -168,12 +168,14 @@ const experiences = [
     tags: [
       { name: "AWS", color: "blue-text-gradient" },
       { name: "Terraform", color: "green-text-gradient" },
-      { name: "Kubernetes", color: "pink-text-gradient" },
+      { name: "EC2", color: "pink-text-gradient" },
       { name: "Docker", color: "blue-text-gradient" },
       { name: "IaC", color: "green-text-gradient" },
+      { name: "ALB", color: "pink-text-gradient" },
+      { name: "Auto Scaling", color: "blue-text-gradient" },
       
     ],
-    image: carrent,
+    image: cloud,
     sourceCodeLink: "https://github.com/SaddamHosyn/cloud-design",
     icon: analytics,
     iconBg: "#E6DEDD",
@@ -215,7 +217,6 @@ const experiences = [
       { name: "REST APIs", color: "green-text-gradient" },
       { name: "APIIntegration", color: "pink-text-gradient" },
       { name: "Data Aggregation", color: "blue-text-gradient" },
-      { name: "Error Handling", color: "green-text-gradient" },
 
     ],
     image: gro,
@@ -226,24 +227,22 @@ const experiences = [
 ];
 const projects: TProject[] = [
   {
-    name: "Wheat Disease Detection",
-        description: `• Engineered a YOLOv5m computer vision pipeline to improve agricultural disease detection over standard models.
+    name: "Detecto",
+        description: `• Engineered an end-to-end YOLOv8 computer vision system for real-time person detection and occupancy counting.
 
-• Integrated a Squeeze-and-Excitation attention module to boost feature extraction and spatial dependency.
+• Achieved >85% accuracy and <10% false positives with <1.5s inference for near real-time monitoring.
 
-• Augmented a custom dataset of 11,510 images across 5 wheat conditions (Healthy, Furasiam, Loose Smut, Powdery Mildew, Rust).
+• Built a FastAPI service and React dashboard to visualize live detections, trends, and confidence metrics.
 
-• Validated the SE-attention architecture's superiority via ablation studies on YOLOv5 variants and ShuffleNetv2.
-
-• Achieved 82.16% precision, 84.87% recall, and 87.21% mAP@0.5, outperforming Faster R-CNN and SSD baselines.`,
+• Implemented structured event logging for operational auditing, system tuning, and data-driven safety decisions.`,
     tags: [
-      { name: "Agricultural AI", color: "blue-text-gradient" },
-      { name: "PyTorch", color: "green-text-gradient" },
-      { name: "YOLOv5", color: "pink-text-gradient" },
-     
+      { name: "YOLOv8", color: "blue-text-gradient" },
+      { name: "FastAPI", color: "green-text-gradient" },
+      { name: "React", color: "pink-text-gradient" },
+      { name: "Deep Learning", color: "blue-text-gradient" },
     ],
-    image: carrent,
-    sourceCodeLink: "https://github.com/SaddamHosyn",
+    image: det,
+    sourceCodeLink: "https://github.com/SaddamHosyn/detecto.git",
   },
   {
     name: "NLP Scrapper",
@@ -265,22 +264,24 @@ const projects: TProject[] = [
     sourceCodeLink: "https://github.com/SaddamHosyn/nlp-scapper",
   },
   {
-    name: "Detecto",
-        description: `• Engineered an end-to-end YOLOv8 computer vision system for real-time person detection and occupancy counting.
+    name: "Wheat Disease Detection",
+        description: `• Engineered a YOLOv5m computer vision pipeline to improve agricultural disease detection over standard models.
 
-• Achieved >85% accuracy and <10% false positives with <1.5s inference for near real-time monitoring.
+• Integrated a Squeeze-and-Excitation attention module to boost feature extraction and spatial dependency.
 
-• Built a FastAPI service and React dashboard to visualize live detections, trends, and confidence metrics.
+• Augmented a custom dataset of 11,510 images across 5 wheat conditions (Healthy, Furasiam, Loose Smut, Powdery Mildew, Rust).
 
-• Implemented structured event logging for operational auditing, system tuning, and data-driven safety decisions.`,
+• Validated the SE-attention architecture's superiority via ablation studies on YOLOv5 variants and ShuffleNetv2.
+
+• Achieved 82.16% precision, 84.87% recall, and 87.21% mAP@0.5, outperforming Faster R-CNN and SSD baselines.`,
     tags: [
-      { name: "YOLOv8", color: "blue-text-gradient" },
-      { name: "FastAPI", color: "green-text-gradient" },
-      { name: "React", color: "pink-text-gradient" },
-      { name: "Deep Learning", color: "blue-text-gradient" },
+      { name: "Agricultural AI", color: "blue-text-gradient" },
+      { name: "PyTorch", color: "green-text-gradient" },
+      { name: "YOLOv5", color: "pink-text-gradient" },
+     
     ],
-    image: det,
-    sourceCodeLink: "https://github.com/SaddamHosyn/detecto.git",
+    image: carrent,
+    sourceCodeLink: "https://github.com/SaddamHosyn/Wheat-Disease-Detection.git",
   },
 ];
 const certifications: TCertification[] = [
