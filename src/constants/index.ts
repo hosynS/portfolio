@@ -4,6 +4,7 @@ import type {
   TTechnology,
   TProject,
   TCertification,
+  TTestimonial,
 } from "../types";
 
 import {
@@ -239,6 +240,7 @@ const experiences = [
     iconBg: "#383E56",
   },
 ];
+
 const projects: TProject[] = [
   {
     name: "Detecto",
@@ -352,4 +354,6 @@ const certifications: TCertification[] = [
   },
 ];
 
-export { services, technologies, experiences, projects, certifications };
+const testimonials: TTestimonial[] = [];
+
+export { services, technologies, experiences, projects, certifications, testimonials };
