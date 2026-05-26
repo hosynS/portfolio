@@ -21,7 +21,7 @@ import bash from "./tech/Bash.png";
 import githubIcon from "./tech/GitHub.svg";
 import postgresql from "./tech/postgresql.png";
 import kafka from "./tech/kafka.png";
-import kube from "./tech/kube.png";
+import kube from "./tech/Kube.png";
 import spring from "./tech/spring.png";
 
 import developer from "./company/developer.png";
