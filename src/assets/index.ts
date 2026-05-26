@@ -17,7 +17,7 @@ import typescript from "./tech/typescript.png";
 import python from "./tech/python.png";
 import pytorch from "./tech/PyTorch.png";
 import golang from "./tech/golang.svg";
-import bash from "./tech/bash.png";
+import bash from "./tech/Bash.png";
 import githubIcon from "./tech/GitHub.svg";
 import postgresql from "./tech/postgresql.png";
 import kafka from "./tech/kafka.png";
