@@ -87,7 +87,7 @@ const technologies: TTechnology[] = [
 const experiences = [
     {
     name: "BI-Solution-Project",
-   description: `• Built an end-to-end BI solution analyzing market penetration, tourism demand, and per-capita spending across 12 Åland municipalities.
+   description: `• Built an end-to-end BI solution analyzing market penetration, tourism demand, and per-capita spending across 16 Åland municipalities.
 
 • Engineered a multi-source pipeline integrating JSON sales logs, ÅSUB demographic APIs, and tourism CSVs into a centralized DuckDB warehouse.
 
