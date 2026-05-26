@@ -41,6 +41,15 @@ import {
   kube,
 } from "../assets";
 
+// Import video demo files
+import biVideo from "../assets/videos/bi.mp4";
+import buyVideo from "../assets/videos/buy.mp4";
+import cloudVideo from "../assets/videos/cloud.mp4";
+import detectoVideo from "../assets/videos/Detecto.mp4";
+import groupieVideo from "../assets/videos/groupie.mp4";
+import realtimeVideo from "../assets/videos/realtime.mp4";
+import wheatVideo from "../assets/videos/wheat.mp4";
+
 export const navLinks: TNavLink[] = [
   { id: "about", title: "About" },
   { id: "tech-skills", title: "Tech Skills" },
@@ -99,6 +108,7 @@ const experiences = [
     ],
     image: bi,
     sourceCodeLink: "https://github.com/SaddamHosyn/bi-solution-course-project",
+    videoDemoLink: biVideo,
     icon: robot,
     iconBg: "#E6DEDD",
   },
@@ -124,6 +134,7 @@ const experiences = [
   ],
   image: real,
   sourceCodeLink: "https://github.com/SaddamHosyn/real-time-forum",
+  videoDemoLink: realtimeVideo,
   icon: developer,
   iconBg: "#383E56",
 },
@@ -151,6 +162,7 @@ const experiences = [
     ],
     image: buy,
     sourceCodeLink: "https://github.com/SaddamHosyn/buy-02",
+    videoDemoLink: buyVideo,
     icon: networkAdmin,
     iconBg: "#383E56",
   },
@@ -177,6 +189,7 @@ const experiences = [
     ],
     image: cloud,
     sourceCodeLink: "https://github.com/SaddamHosyn/cloud-design",
+    videoDemoLink: cloudVideo,
     icon: analytics,
     iconBg: "#E6DEDD",
   },
@@ -221,6 +234,7 @@ const experiences = [
     ],
     image: gro,
     sourceCodeLink: "https://github.com/SaddamHosyn/Groupie-Tracker-Visualization.git",
+    videoDemoLink: groupieVideo,
     icon: programmer,
     iconBg: "#383E56",
   },
@@ -243,6 +257,7 @@ const projects: TProject[] = [
     ],
     image: det,
     sourceCodeLink: "https://github.com/SaddamHosyn/detecto.git",
+    videoDemoLink: detectoVideo,
   },
   {
     name: "NLP Scrapper",
@@ -282,6 +297,7 @@ const projects: TProject[] = [
     ],
     image: carrent,
     sourceCodeLink: "https://github.com/SaddamHosyn/Wheat-Disease-Detection.git",
+    videoDemoLink: wheatVideo,
   },
 ];
 const certifications: TCertification[] = [

@@ -16,6 +16,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
   tags,
   image,
   sourceCodeLink,
+  videoDemoLink,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -35,16 +36,34 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
                 name === "Detecto" ? "object-contain bg-black" : "object-cover"
               }`}
             />
-            <div className="card-img_hover absolute inset-0 m-3 flex justify-end">
+            <div className="card-img_hover absolute inset-0 m-3 flex justify-end gap-2">
+              {videoDemoLink && (
+                <div
+                  onClick={() => window.open(videoDemoLink, "_blank")}
+                  className="group relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+                  title="Watch Demo"
+                >
+                  <svg
+                    className="h-5 w-5 fill-white"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">Video Demo</span>
+                </div>
+              )}
               <div
                 onClick={() => window.open(sourceCodeLink, "_blank")}
-                className="black-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full"
+                className="group relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gray-700 hover:bg-gray-600 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+                title="View Code"
               >
                 <img
                   src={github}
                   alt="github"
-                  className="h-1/2 w-1/2 object-contain"
+                  className="h-5 w-5 object-contain"
                 />
+                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Code</span>
               </div>
             </div>
           </div>
