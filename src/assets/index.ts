@@ -10,7 +10,8 @@ import close from "./close.svg";
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import git from "./tech/git.png";
-import dbt from "./tech/dbt.png";
+// import dbt from "./tech/dbt.png";
+import terraform from "./tech/terr.png";
 import mongodb from "./tech/mongodb.png";
 import reactjs from "./tech/reactjs.png";
 import typescript from "./tech/typescript.png";
@@ -42,6 +43,8 @@ import det from "./det.png";
 import cloud from "./cloud.png";
 import mckinsey from "./certifications/mckinsey.png";
 import keep from "./keep.png";
+import biHack from "./bi-hack.png";
+import crudm from "./crudm.png";
 
 export {
   logo,
@@ -55,7 +58,8 @@ export {
   css,
   docker,
   git,
-  dbt,
+  // dbt,
+  terraform,
   mongodb,
   reactjs,
   typescript,
@@ -85,4 +89,6 @@ export {
   det,
   mckinsey,
   keep,
+  biHack,
+  crudm,
 };
