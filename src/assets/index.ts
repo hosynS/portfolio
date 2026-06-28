@@ -40,6 +40,8 @@ import orc from "./orc.png";
 import nlp from "./nlp.png";
 import det from "./det.png";
 import cloud from "./cloud.png";
+import mckinsey from "./certifications/mckinsey.png";
+import keep from "./keep.png";
 
 export {
   logo,
@@ -81,4 +83,6 @@ export {
   orc,
   nlp,
   det,
+  mckinsey,
+  keep,
 };

@@ -40,6 +40,8 @@ import {
   statistics,
   det,
   kube,
+  mckinsey,
+  keep,
 } from "../assets";
 
 // Import video demo files
@@ -105,7 +107,6 @@ const experiences = [
       { name: "ELT", color: "blue-text-gradient" },
       { name: "dbt", color: "green-text-gradient" },
       { name: "SQL", color: "pink-text-gradient" },
-      { name: "DataPipelines", color: "blue-text-gradient" },
     ],
     image: bi,
     sourceCodeLink: "https://github.com/SaddamHosyn/bi-solution-course-project",
@@ -239,6 +240,31 @@ const experiences = [
     icon: programmer,
     iconBg: "#383E56",
   },
+  {
+    name: "Code-Keeper",
+    description: `• Provisioned highly available AWS cloud infrastructure across staging and production environments using Terraform, establishing an ECS-based container orchestration foundation with isolated VPCs, Application Load Balancers, and S3 remote state.
+
+• Engineered a comprehensive CI/CD pipeline using a self-managed GitLab instance deployed via Ansible, automating Python microservice tests, Trivy security vulnerability scans, and continuous Docker image delivery to AWS ECR.
+
+• Architected a resilient backend for an inventory and billing system featuring three independent Python microservices, integrating asynchronous event processing via RabbitMQ and managing persistent relational data with PostgreSQL.
+
+• Implemented enterprise-grade security and deployment controls, including AWS Cognito JWT authentication, least-privilege IAM execution roles, dynamic AWS Secrets Manager injection, and manual approval gates for zero-downtime production rollouts.`,
+    tags: [
+      { name: "AWS", color: "blue-text-gradient" },
+      { name: "Terraform", color: "green-text-gradient" },
+      { name: "ECS", color: "pink-text-gradient" },
+      { name: "GitLab CI", color: "blue-text-gradient" },
+      { name: "Ansible", color: "green-text-gradient" },
+      { name: "RabbitMQ", color: "pink-text-gradient" },
+      { name: "PostgreSQL", color: "blue-text-gradient" },
+      { name: "Python", color: "green-text-gradient" },
+      { name: "Cognito", color: "pink-text-gradient" },
+    ],
+    image: keep,
+    sourceCodeLink: "https://github.com/SaddamHosyn/Code-Keeper",
+    icon: analytics,
+    iconBg: "#E6DEDD",
+  },
 ];
 
 const projects: TProject[] = [
@@ -260,6 +286,8 @@ const projects: TProject[] = [
     image: det,
     sourceCodeLink: "https://github.com/SaddamHosyn/detecto.git",
     videoDemoLink: detectoVideo,
+    icon: robot,
+    iconBg: "#E6DEDD",
   },
   {
     name: "NLP Scrapper",
@@ -279,6 +307,8 @@ const projects: TProject[] = [
     ],
     image: nlp,
     sourceCodeLink: "https://github.com/SaddamHosyn/nlp-scapper",
+    icon: developer,
+    iconBg: "#383E56",
   },
   {
     name: "Wheat Disease Detection",
@@ -300,6 +330,8 @@ const projects: TProject[] = [
     image: carrent,
     sourceCodeLink: "https://github.com/SaddamHosyn/Wheat-Disease-Detection.git",
     videoDemoLink: wheatVideo,
+    icon: analytics,
+    iconBg: "#E6DEDD",
   },
 ];
 const certifications: TCertification[] = [
@@ -351,6 +383,14 @@ const certifications: TCertification[] = [
     date: "2024",
     link: "https://drive.google.com/file/d/1gmwCv3Yl0AA5ipuKPbVDwWCTq5jhq7ds/preview",
     type: "pdf",
+  },
+  {
+    title: "McKinsey.org Forward Program",
+    issuer: "McKinsey.org",
+    date: "2026",
+    link: mckinsey,
+    type: "image",
+    credentialUrl: "https://www.credly.com/badges/dead2894-8b7f-4934-814a-d5d0d011cc1d",
   },
 ];
 

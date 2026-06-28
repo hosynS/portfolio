@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { SectionWrapper } from "../../hoc";
 import { certifications } from "../../constants";
 import { config } from "../../constants/config";
@@ -6,6 +7,18 @@ import type { TCertification } from "../../types";
 
 const Certifications = () => {
   const [selected, setSelected] = useState<TCertification | null>(null);
+
+  // Prevent background scrolling when a certificate is being viewed
+  useEffect(() => {
+    if (selected) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selected]);
 
   return (
     <>
@@ -31,21 +44,32 @@ const Certifications = () => {
               </p>
             )}
             {cert.link && (
-              <button
-                onClick={() => setSelected(cert)}
-                className="mt-3 inline-block text-[13px] text-blue-400 hover:underline"
-              >
-                View Certificate →
-              </button>
+              cert.type === "link" ? (
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block text-[13px] text-blue-400 hover:underline"
+                >
+                  View Certificate ↗
+                </a>
+              ) : (
+                <button
+                  onClick={() => setSelected(cert)}
+                  className="mt-3 inline-block text-[13px] text-blue-400 hover:underline"
+                >
+                  View Certificate →
+                </button>
+              )
             )}
           </div>
         ))}
       </div>
 
-      {/* Modal */}
-      {selected && (
+      {/* Modal rendered at document body root using Portal to avoid stacking context issues */}
+      {selected && createPortal(
         <div
-          className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/75 z-[999] flex items-center justify-center p-4"
           onClick={() => setSelected(null)}
         >
           <div
@@ -59,7 +83,10 @@ const Certifications = () => {
               </h3>
               <div className="flex items-center gap-3 shrink-0">
                 <a
-                  href={selected.link.replace("/preview", "/view")}
+                  href={selected.credentialUrl || (selected.link.includes("drive.google.com")
+                    ? selected.link.replace("/preview", "/view")
+                    : selected.link)
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-400 text-[12px] hover:underline"
@@ -79,10 +106,10 @@ const Certifications = () => {
             <div className="flex-1 overflow-auto">
               {selected.type === "image" ? (
                 <img
-                  src={selected.link.replace(
-                    "/preview",
-                    "/uc?export=view"
-                  )}
+                  src={selected.link.includes("drive.google.com")
+                    ? selected.link.replace("/preview", "/uc?export=view")
+                    : selected.link
+                  }
                   alt={selected.title}
                   className="w-full h-full object-contain p-4"
                 />
@@ -96,7 +123,8 @@ const Certifications = () => {
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

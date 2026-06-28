@@ -26,6 +26,8 @@ export type TProject = {
   image: string;
   sourceCodeLink: string;
   videoDemoLink?: string;
+  icon?: string;
+  iconBg?: string;
 } & Required<Pick<TCommonProps, "name">>;
 
 export type TTechnology = Required<Omit<TCommonProps, "title">>;
@@ -48,8 +50,9 @@ export type TCertification = {
   issuer: string;
   date: string;
   link: string;
-  type: "pdf" | "image";
+  type: "pdf" | "image" | "link";
   credentialId?: string;
+  credentialUrl?: string;
 };
 
 export type { TNavLink, TService, TTechnology, TProject, TCertification };

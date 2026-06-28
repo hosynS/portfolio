@@ -1,35 +1,23 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../layout/Loader";
 
-const Earth: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
+const Earth = () => {
   const earth = useGLTF("./planet/scene.gltf");
+  const { viewport } = useThree();
+
+  // Dynamically size the Earth to occupy 85% of the viewport's smallest dimension.
+  // This guarantees it fits perfectly without clipping on mobile, tablet, or desktop.
+  const scale = Math.min(viewport.width, viewport.height) * 0.42;
 
   return (
-    <primitive object={earth.scene} scale={isMobile ? 1.5 : 2.5} position-y={0} rotation-y={0} />
+    <primitive object={earth.scene} scale={scale} position-y={0} rotation-y={0} />
   );
 };
 
 const EarthCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-    setIsMobile(mediaQuery.matches);
-
-    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
-      setIsMobile(event.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
-
   return (
     <Canvas
       shadows
@@ -51,7 +39,7 @@ const EarthCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Earth isMobile={isMobile} />
+        <Earth />
 
         <Preload all />
       </Suspense>

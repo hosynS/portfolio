@@ -149,11 +149,11 @@ const Contact = () => {
       </motion.div>
 
       <motion.div
-  variants={slideIn("right", "tween", 0.2, 1)}
-  className="h-[80px] sm:h-[200px] md:h-[350px] xl:h-auto flex-1 w-full flex items-center justify-center overflow-visible"
->
-  <EarthCanvas />
-</motion.div>
+        variants={slideIn("right", "tween", 0.2, 1)}
+        className="h-[280px] sm:h-[350px] md:h-[420px] xl:h-auto flex-1 w-full flex items-center justify-center overflow-visible"
+      >
+        <EarthCanvas />
+      </motion.div>
     </div>
   );
 };

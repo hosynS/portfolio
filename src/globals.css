@@ -229,10 +229,18 @@ a *, button *, svg, img {
   }
 }
 
-/* Break the library's hardcoded 1170px limit and let it fill the parent container */
-@media only screen and (min-width: 1170px) {
-  .vertical-timeline {
-    width: 102% !important;       /* This overrides the library's hardcoded 1170px */
-    max-width: 102% !important;   /* This ensures it stretches to the full wrapper size */
-  }
+/* Custom scrollbar for project details modal */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(29, 24, 54, 0.4);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
