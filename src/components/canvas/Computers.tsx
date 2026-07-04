@@ -1,12 +1,14 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useEffect, useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import * as THREE from "three";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../layout/Loader";
 import { useIsTouchDevice } from "../../hooks/useIsTouchDevice";
 
-const Computers: React.FC<{ isMobile: boolean; isTablet: boolean }> = ({ isMobile, isTablet }) => {
+const Computers: React.FC<{ isMobile: boolean; isTablet: boolean; autoRotate: boolean }> = ({ isMobile, isTablet, autoRotate }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
+  const groupRef = useRef<THREE.Group>(null);
 
   // Determine scale and position dynamically based on viewport breakpoints
   const scale = isMobile ? 0.6 : isTablet ? 0.62 : 0.75;
@@ -16,25 +18,34 @@ const Computers: React.FC<{ isMobile: boolean; isTablet: boolean }> = ({ isMobil
       ? [0, -2.4, -1.8]
       : [0, -2.25, -1.5];
 
+  // Gentle auto-rotation on touch devices where OrbitControls is disabled
+  useFrame((_state, delta) => {
+    if (autoRotate && groupRef.current) {
+      groupRef.current.rotation.y += delta * 0.3;
+    }
+  });
+
   return (
-    <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
-      />
-      <pointLight intensity={1} />
-      <primitive
-        object={computer.scene}
-        scale={scale}
-        position={position}
-        rotation={[-0.01, -0.2, -0.1]}
-      />
-    </mesh>
+    <group ref={groupRef}>
+      <mesh>
+        <hemisphereLight intensity={0.15} groundColor="black" />
+        <spotLight
+          position={[-20, 50, 10]}
+          angle={0.12}
+          penumbra={1}
+          intensity={1}
+          castShadow
+          shadow-mapSize={1024}
+        />
+        <pointLight intensity={1} />
+        <primitive
+          object={computer.scene}
+          scale={scale}
+          position={position}
+          rotation={[-0.01, -0.2, -0.1]}
+        />
+      </mesh>
+    </group>
   );
 };
 
@@ -74,7 +85,7 @@ const ComputersCanvas = () => {
   return (
     <div className="absolute inset-x-0 top-[260px] sm:top-0 w-full h-[550px] sm:h-full max-h-[calc(100vh-270px)] sm:max-h-none">
       <Canvas
-        frameloop="demand"
+        frameloop={isTouchDevice ? "always" : "demand"}
         shadows
         dpr={[1, 2]}
         camera={{ position: [20, 3, 5], fov: 25 }}
@@ -91,7 +102,7 @@ const ComputersCanvas = () => {
               minPolarAngle={Math.PI / 2}
             />
           )}
-          <Computers isMobile={isMobile} isTablet={isTablet} />
+          <Computers isMobile={isMobile} isTablet={isTablet} autoRotate={isTouchDevice} />
         </Suspense>
         <Preload all />
       </Canvas>
