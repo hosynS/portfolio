@@ -1,92 +1,75 @@
-# 3D Portfolio
+# 3D Portfolio — Saddam Hussain
 
 ## 🌐 Live Demo
 
 Explore the live demonstration of the project:
-[reactjs18-3d-portfolio](https://reactjs18-3-d-portfolio.vercel.app/)
+[saddamhosyn.github.io/portfolio](https://saddamhosyn.github.io/portfolio/)
 
 ## 📝 Description
 
-**3D Portfolio** is a well-designed and fully functional portfolio website that is built with
-React.js and Three.js. It is a fully responsive website that works well on all devices.
+**3D Portfolio** is a premium, fully responsive portfolio website built with **React.js**, **Three.js**, and **Tailwind CSS**. It showcases projects, experience, technical skills, and certifications using interactive 3D elements and animations.
 
 <details><summary><b>Folder Structure</b></summary>
 
 ```bash
-reactjs18-3d-portfolio/
-├── src/
-├   ├── App.tsx
-├   ├── globals.css
-├   ├── main.tsx
-├   ├── vite.env.d.ts
-├   ├── components/
-├   ├   ├── atoms/
-├   ├   ├   └── Header.tsx
-├   ├   ├── canvas/
-├   ├   ├   ├── Ball.tsx
-├   ├   ├   ├── Computers.tsx
-├   ├   ├   ├── Earth.tsx
-├   ├   ├   ├── Stars.tsx
+portfolio/
+├── reactjs18-3d-portfolio/   # Main React Vite App
+├   ├── src/
+├   ├   ├── App.tsx
+├   ├   ├── globals.css
+├   ├   ├── main.tsx
+├   ├   ├── vite.env.d.ts
+├   ├   ├── components/
+├   ├   ├   ├── atoms/
+├   ├   ├   ├   └── Header.tsx
+├   ├   ├   ├── canvas/
+├   ├   ├   ├   ├── Ball.tsx
+├   ├   ├   ├   ├── Computers.tsx
+├   ├   ├   ├   ├── Earth.tsx
+├   ├   ├   ├   ├── Stars.tsx
+├   ├   ├   ├   └── index.ts
+├   ├   ├   ├── layout/
+├   ├   ├   ├   ├── Loader.tsx
+├   ├   ├   ├   └── Navbar.tsx
+├   ├   ├   ├── sections/
+├   ├   ├   ├   ├── About.tsx
+├   ├   ├   ├   ├── Contact.tsx
+├   ├   ├   ├   ├── Experience.tsx
+├   ├   ├   ├   ├── Feedbacks.tsx
+├   ├   ├   ├   ├── Hero.tsx
+├   ├   ├   ├   ├── Tech.tsx
+├   ├   ├   ├   ├── Works.tsx
+├   ├   ├   ├   └── page.tsx
 ├   ├   ├   └── index.ts
-├   ├   ├── layout/
-├   ├   ├   ├── Loader.tsx
-├   ├   ├   └── Navbar.tsx
-├   ├   ├── sections/
-├   ├   ├   ├── About.tsx
-├   ├   ├   ├── Contact.tsx
-├   ├   ├   ├── Experience.tsx
-├   ├   ├   ├── Feedbacks.tsx
-├   ├   ├   ├── Hero.tsx
-├   ├   ├   ├── Tech.tsx
-├   ├   ├   ├── Works.tsx
-├   ├   ├   └── page.tsx
-├   ├   └── index.ts
-├   ├── constants/
-├   ├   ├── config.ts
-├   ├   ├── styles.ts
-├   ├   └── index.ts
-├   ├── hoc/
-├   ├   ├── SectionWrapper.tsx
-├   ├   └── index.ts
-├   ├── utils/
-├   ├   └── motion.ts
-├   ├── types/
-├   ├   └── index.d.ts
-├   └── assets/
-├       ├── company/
-├       ├   └── [[...]].{svg,png}
-├       ├── tech/
-├       ├   └── [[...]].{svg,png}
-├       ├── [[...]].{svg,png}
-├       └── index.ts
-├── public/
-├   ├── desktop_pc
-├   ├   ├── textures/[[...]].png
-├   ├   ├── license.txt
-├   ├   ├── scene.bin
-├   ├   └── scene.gltf
-├   ├── planet
-├   ├   ├── textures/[[...]].png
-├   ├   ├── license.txt
-├   ├   ├── scene.bin
-├   ├   └── scene.gltf
-├   ├── logo.png
-├   └── logo.svg
-├── .env
-├── .eslintignore
-├── .eslintrc.cjs
-├── .gitignore
-├── .prettierignore
-├── .prettierrc.cjs
-├── index.html
-├── LICENSE
-├── README.md
-├── package.json
-├── postcss.config.cjs
-├── tailwind.config.cjs
-├── tsconfig.json
-├── tsconfig.node.json
-└── vite.config.js
+├   ├   ├── constants/
+├   ├   ├   ├── config.ts
+├   ├   ├   ├── styles.ts
+├   ├   ├   └── index.ts
+├   ├   ├── hoc/
+├   ├   ├   ├── SectionWrapper.tsx
+├   ├   ├   └── index.ts
+├   ├   ├── utils/
+├   ├   ├   └── motion.ts
+├   ├   ├── types/
+├   ├   ├   └── index.d.ts
+├   ├   └── assets/
+├   ├       ├── company/
+├   ├       ├── tech/
+├   ├       └── index.ts
+├   ├── public/
+├   ├   ├── desktop_pc
+├   ├   ├── planet
+├   ├   ├── logo.png
+├   ├   └── logo.svg
+├   ├── .env
+├   ├── .gitignore
+├   ├── index.html
+├   ├── LICENSE
+├   ├── README.md
+├   ├── package.json
+├   └── vite.config.js
+├── package.json              # Root package.json (workspace scripts)
+└── how2run.txt               # Local notes
 ```
 
 </details>
@@ -104,14 +87,7 @@ reactjs18-3d-portfolio/
   - [Scripts](#-scripts)
 - [Environment Variables](#-environment-variables)
 - [Deployment](#-deployment)
-  - [Deploy to production (manual)](#-deploy-to-production-manual)
-  - [Deploy on Vercel (recommended)](#-deploy-on-vercel-recommended)
-  - [Deploy on Netlify](#-deploy-on-netlify)
-- [Contributing](#-contributing)
-  - [Bug / Feature Request](#-bug--feature-request)
-- [Acknowledgements](#-acknowledgements)
-- [References](#-references)
-- [Contact Us](#-contact-us)
+- [Contact](#-contact-us)
 - [License](#-license)
 
 </details>
@@ -120,38 +96,26 @@ reactjs18-3d-portfolio/
 
 <details><summary><b>3D Portfolio</b> is built using the following technologies:</summary>
 
-- [TypeScript](https://www.typescriptlang.org/): TypeScript is a typed superset of JavaScript that
-  compiles to plain JavaScript.
-- [Vite](https://vitejs.dev/): Vite is a build tool that aims to provide a faster and leaner
-  development experience for modern web projects.
-- [React.js](https://reactjs.org/): React is a free and open-source front-end JavaScript library for
-  building user interfaces or UI components.
-- [Three.js](https://threejs.org/): Three.js is a cross-browser JavaScript library and application
-  programming interface used to create and display animated 3D computer graphics in a web browser
-  using WebGL.
-- [Framer Motion](https://www.framer.com/motion/): Framer Motion is a production-ready motion
-  library for React.
-- [Tailwind CSS](https://tailwindcss.com/): Tailwind CSS is a utility-first CSS framework for
-  rapidly building custom user interfaces.
-- [ESLint](https://eslint.org/): ESLint is a static code analysis tool for identifying problematic
-  patterns found in JavaScript code.
+- [TypeScript](https://www.typescriptlang.org/): TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+- [Vite](https://vitejs.dev/): Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects.
+- [React.js](https://reactjs.org/): React is a free and open-source front-end JavaScript library for building user interfaces.
+- [Three.js](https://threejs.org/): Three.js is a cross-browser JavaScript library used to create and display animated 3D computer graphics in a web browser using WebGL.
+- [Framer Motion](https://www.framer.com/motion/): Framer Motion is a production-ready motion library for React.
+- [Tailwind CSS](https://tailwindcss.com/): Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.
+- [ESLint](https://eslint.org/): ESLint is a static code analysis tool for identifying problematic patterns found in JavaScript code.
 - [Prettier](https://prettier.io/): Prettier is an opinionated code formatter.
-- [Vercel](https://vercel.com/): Vercel is a cloud platform for frontend developers, providing the
-  frameworks, workflows, and infrastructure to build a faster, more personalized Web.
 
 </details><br/>
 
-[![Technologies Used](https://skillicons.dev/icons?i=ts,vite,react,threejs,tailwind,vercel)](https://skillicons.dev)
+[![Technologies Used](https://skillicons.dev/icons?i=ts,vite,react,threejs,tailwind,github)](https://skillicons.dev)
 
 ## 🧰 Get Started
 
-To get this project up and running in your development environment, follow these step-by-step
-instructions.
+To get this project up and running in your development environment, follow these step-by-step instructions.
 
 ### 📋 Prerequisites
 
-In order to install and run this project locally, you would need to have the following installed on
-your local machine.
+In order to install and run this project locally, you would need to have the following installed on your local machine.
 
 - [Node.js](https://nodejs.org/en/)
 - [NPM](https://www.npmjs.com/get-npm)
@@ -159,95 +123,63 @@ your local machine.
 
 ### ⚙️ Installation and Run Locally
 
-**Step 0:**
+**Step 0 (Configure EmailJS):**
 
-Note :bangbang: the application uses EmailJS in order to send emails using client-side, therefore,
-you need to create EmailJS account [here](https://emailjs.com/) and sets the
-`VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAIL_JS_ACCESS_TOKEN` environment
-variables in `.env` file.
+The contact form uses EmailJS to send client-side emails. You need to create a free account at [EmailJS](https://emailjs.com/) and set the environment variables in a `.env` file (see the [Environment Variables](#-environment-variables) section below).
 
-**Step 1:**
+**Step 1 (Clone the Repo):**
 
 Download or clone this repo by using the link below:
 
 ```bash
-git clone https://github.com/ladunjexa/reactjs18-3d-portfolio.git
+git clone https://github.com/SaddamHosyn/portfolio.git
 ```
 
-**Step 2:**
+**Step 2 (Install Dependencies):**
 
-Execute the following command in the root directory of the downloaded repo in order to install
-dependencies:
+Execute the following command in the root directory of the repo to install root & project dependencies:
 
 ```bash
 npm install
 ```
 
-**Step 3:**
+**Step 3 (Run the development server):**
 
-Execute the following command in order to run the development server locally:
+Run the development server using the root workspace script:
 
 ```bash
 npm run dev
 ```
 
-**Step 4:**
-
-Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
-
-### 📜 Scripts
-
-All scripts are defined in the `package.json` file. Here is a list of all scripts:
-
-| Script             | Action                                      |
-| :----------------- | :------------------------------------------ |
-| `npm install`      | Installs dependencies                       |
-| `npm run dev`      | Starts local dev server at `localhost:5137` |
-| `npm run build`    | Build your production site to `./dist/`     |
-| `npm run preview`  | Boot up a local static web server           |
-| `npm run lint`     | Run ESLint                                  |
-| `npm run ts:check` | Perform type-checking                       |
+*Note: The React application is configured with a base URL of `/portfolio/`. Once the server starts, navigate to `http://localhost:5173/portfolio/` to see your portfolio.*
 
 ## 🔒 Environment Variables
 
-Environment variables[^3] can be used for configuration. They must be set before running the app.
-
-> [Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are variables that are
-> set in the operating system or shell, typically used to configure programs.
-
-**React.js 18 3D Portfolio** uses [EmailJS](https://www.emailjs.com/) as external service. You need
-to create an account and get the required credentials to run the app.
-
-Create a `.env` file in the root directory of the project and add the following environment
-variables:
+Create a `.env` file in the main project directory (`reactjs18-3d-portfolio/.env`) and add the following keys with your credentials from EmailJS:
 
 ```env
-VITE_EMAILJS_SERVICE_ID=<VITE_EMAILJS_SERVICE_ID>
-VITE_EMAILJS_TEMPLATE_ID=<VITE_EMAILJS_TEMPLATE_ID>
-VITE_EMAIL_JS_ACCESS_TOKEN=<VITE_EMAIL_JS_ACCESS_TOKEN>
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_ACCESS_TOKEN=your_access_token
 ```
 
 ## 🚀 Deployment
 
-#### Deploy to production (manual)
+The portfolio is set up to automatically deploy to **GitHub Pages** using GitHub Actions workflows defined in `.github/workflows/deploy.yml`. 
 
-You can create an optimized production build with the following command:
+Every push to the `main` branch compiles the production bundle and deploys the update automatically to:
+**https://saddamhosyn.github.io/portfolio/**
+
+You can also run a manual build locally:
 
 ```bash
 npm run build
 ```
 
-#### Deploy on Vercel (recommended)
+## ✉️ Contact Us
 
-The easiest way to deploy this Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+Feel free to reach out via email at: **sadamhos92@gmail.com** or connect with me on [LinkedIn](https://www.linkedin.com/in/saddam-hussain-khan).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fladunjexa%2Freactjs18-3d-portfolio)
+## 📄 License
 
-#### Deploy on Netlify
-
-You can also deploy this Next.js app with [Netlify](https://www.netlify.com/).
-
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ladunjexa/reactjs18-3d-portfolio)
-
-Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
