@@ -18,32 +18,53 @@ const Earth = () => {
 };
 
 const EarthCanvas = () => {
-  return (
-    <Canvas
-      shadows
-      frameloop="demand"
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-      camera={{
-        fov: 45,
-        near: 0.1,
-        far: 200,
-        position: [-4, 3, 6],
-      }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          autoRotate
-          enablePan={false}
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Earth />
+  const [isTabletOS, setIsTabletOS] = useState(false);
 
-        <Preload all />
-      </Suspense>
-    </Canvas>
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 500px)");
+    const isMacLike = /Macintosh/i.test(navigator.userAgent);
+    const hasTouch = navigator.maxTouchPoints && navigator.maxTouchPoints > 1;
+    const isIPadOS = isMacLike && hasTouch;
+    const isMobileUserAgent = /iPad|iPhone|iPod|Android/i.test(navigator.userAgent);
+    
+    setIsTabletOS((isMobileUserAgent || isIPadOS) && !mobileQuery.matches);
+
+    const handleMobileChange = (event: MediaQueryListEvent) => {
+      setIsTabletOS((isMobileUserAgent || isIPadOS) && !event.matches);
+    };
+
+    mobileQuery.addEventListener("change", handleMobileChange);
+    return () => mobileQuery.removeEventListener("change", handleMobileChange);
+  }, []);
+
+  return (
+    <div className={`relative w-full h-full ${isTabletOS ? 'pointer-events-none' : ''}`}>
+      <Canvas
+        shadows
+        frameloop="demand"
+        dpr={[1, 2]}
+        gl={{ preserveDrawingBuffer: true }}
+        camera={{
+          fov: 45,
+          near: 0.1,
+          far: 200,
+          position: [-4, 3, 6],
+        }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            autoRotate
+            enablePan={false}
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Earth />
+
+          <Preload all />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 };
 
