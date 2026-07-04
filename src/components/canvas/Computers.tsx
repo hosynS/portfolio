@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../layout/Loader";
+import { useIsTouchDevice } from "../../hooks/useIsTouchDevice";
 
 const Computers: React.FC<{ isMobile: boolean; isTablet: boolean }> = ({ isMobile, isTablet }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
@@ -40,6 +41,7 @@ const Computers: React.FC<{ isMobile: boolean; isTablet: boolean }> = ({ isMobil
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
+  const isTouchDevice = useIsTouchDevice();
 
   useEffect(() => {
     // Add media query listeners to detect screen profile changes
@@ -79,12 +81,16 @@ const ComputersCanvas = () => {
         gl={{ preserveDrawingBuffer: true }}
       >
         <Suspense fallback={<CanvasLoader />}>
-          <OrbitControls
-            enablePan={false}
-            enableZoom={false}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-          />
+          {/* OrbitControls captures all touch events and blocks scrolling.
+              Only render it on non-touch (mouse) devices. */}
+          {!isTouchDevice && (
+            <OrbitControls
+              enablePan={false}
+              enableZoom={false}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 2}
+            />
+          )}
           <Computers isMobile={isMobile} isTablet={isTablet} />
         </Suspense>
         <Preload all />

@@ -9,6 +9,7 @@ import {
 } from "@react-three/drei";
 
 import CanvasLoader from "../layout/Loader";
+import { useIsTouchDevice } from "../../hooks/useIsTouchDevice";
 
 const Ball = (props: { imgUrl: string }) => {
   const [decal] = useTexture([props.imgUrl]);
@@ -37,10 +38,15 @@ const Ball = (props: { imgUrl: string }) => {
 };
 
 const BallCanvas: React.FC<{ icon: string }> = ({ icon }) => {
+  const isTouchDevice = useIsTouchDevice();
+
   return (
     <Canvas frameloop="demand" dpr={[1, 2]} gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enablePan={false} enableZoom={false} />
+        {/* Only render OrbitControls on non-touch devices to prevent scroll hijacking */}
+        {!isTouchDevice && (
+          <OrbitControls enablePan={false} enableZoom={false} />
+        )}
         <Ball imgUrl={icon} />
       </Suspense>
 
