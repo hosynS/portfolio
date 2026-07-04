@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -23,14 +23,14 @@ const EarthCanvas = () => {
   useEffect(() => {
     const mobileQuery = window.matchMedia("(max-width: 500px)");
     const isMacLike = /Macintosh/i.test(navigator.userAgent);
-    const hasTouch = navigator.maxTouchPoints && navigator.maxTouchPoints > 1;
+    const hasTouch = (navigator.maxTouchPoints || 0) > 1;
     const isIPadOS = isMacLike && hasTouch;
     const isMobileUserAgent = /iPad|iPhone|iPod|Android/i.test(navigator.userAgent);
     
-    setIsTabletOS((isMobileUserAgent || isIPadOS) && !mobileQuery.matches);
+    setIsTabletOS(Boolean((isMobileUserAgent || isIPadOS) && !mobileQuery.matches));
 
     const handleMobileChange = (event: MediaQueryListEvent) => {
-      setIsTabletOS((isMobileUserAgent || isIPadOS) && !event.matches);
+      setIsTabletOS(Boolean((isMobileUserAgent || isIPadOS) && !event.matches));
     };
 
     mobileQuery.addEventListener("change", handleMobileChange);

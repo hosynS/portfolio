@@ -49,10 +49,10 @@ const ComputersCanvas = () => {
 
     // Reliable iPad/Tablet OS detection (bypassing iPadOS desktop spoofing)
     const isMacLike = /Macintosh/i.test(navigator.userAgent);
-    const hasTouch = navigator.maxTouchPoints && navigator.maxTouchPoints > 1;
+    const hasTouch = (navigator.maxTouchPoints || 0) > 1;
     const isIPadOS = isMacLike && hasTouch;
     const isMobileUserAgent = /iPad|iPhone|iPod|Android/i.test(navigator.userAgent);
-    const isTabletDevice = (isMobileUserAgent || isIPadOS) && !mobileQuery.matches;
+    const isTabletDevice = Boolean((isMobileUserAgent || isIPadOS) && !mobileQuery.matches);
 
     // Initialize screen states
     setIsMobile(mobileQuery.matches);
@@ -62,7 +62,7 @@ const ComputersCanvas = () => {
     // Callbacks to update screen states
     const handleMobileChange = (event: MediaQueryListEvent) => {
       setIsMobile(event.matches);
-      setIsTabletOS((isMobileUserAgent || isIPadOS) && !event.matches);
+      setIsTabletOS(Boolean((isMobileUserAgent || isIPadOS) && !event.matches));
     };
     const handleTabletChange = (event: MediaQueryListEvent) => {
       setIsTablet(event.matches);
