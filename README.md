@@ -179,7 +179,3 @@ npm run build
 ## ✉️ Contact Us
 
 Feel free to reach out via email at: **sadamhos92@gmail.com** or connect with me on [LinkedIn](https://www.linkedin.com/in/saddam-hussain-khan).
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
