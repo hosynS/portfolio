@@ -40,29 +40,19 @@ const Computers: React.FC<{ isMobile: boolean; isTablet: boolean }> = ({ isMobil
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
-  const [isTabletOS, setIsTabletOS] = useState(false);
 
   useEffect(() => {
     // Add media query listeners to detect screen profile changes
     const mobileQuery = window.matchMedia("(max-width: 500px)");
     const tabletQuery = window.matchMedia("(min-width: 501px) and (max-width: 1024px)");
 
-    // Reliable iPad/Tablet OS detection (bypassing iPadOS desktop spoofing)
-    const isMacLike = /Macintosh/i.test(navigator.userAgent);
-    const hasTouch = (navigator.maxTouchPoints || 0) > 1;
-    const isIPadOS = isMacLike && hasTouch;
-    const isMobileUserAgent = /iPad|iPhone|iPod|Android/i.test(navigator.userAgent);
-    const isTabletDevice = Boolean((isMobileUserAgent || isIPadOS) && !mobileQuery.matches);
-
     // Initialize screen states
     setIsMobile(mobileQuery.matches);
     setIsTablet(tabletQuery.matches);
-    setIsTabletOS(isTabletDevice);
 
     // Callbacks to update screen states
     const handleMobileChange = (event: MediaQueryListEvent) => {
       setIsMobile(event.matches);
-      setIsTabletOS(Boolean((isMobileUserAgent || isIPadOS) && !event.matches));
     };
     const handleTabletChange = (event: MediaQueryListEvent) => {
       setIsTablet(event.matches);
@@ -80,7 +70,7 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <div className={`absolute inset-x-0 top-[260px] sm:top-0 w-full h-[550px] sm:h-full max-h-[calc(100vh-270px)] sm:max-h-none ${isTabletOS ? 'pointer-events-none' : ''}`}>
+    <div className="absolute inset-x-0 top-[260px] sm:top-0 w-full h-[550px] sm:h-full max-h-[calc(100vh-270px)] sm:max-h-none">
       <Canvas
         frameloop="demand"
         shadows

@@ -14,6 +14,14 @@
   cursor: none !important; /* Hide default cursor forcefully */
 }
 
+/* Override Three.js OrbitControls inline touch-action: none.
+   This restores native vertical scrolling on touch devices (iPad, tablets)
+   while still allowing horizontal touch gestures for 3D model rotation.
+   On desktop (mouse-only), this has no effect. */
+canvas {
+  touch-action: pan-y !important;
+}
+
 /* Force cursor hidden for ALL elements */
 *, *::before, *::after,
 a, button, input, textarea, select, [role="button"], 
