@@ -70,7 +70,7 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <div className="absolute inset-x-0 top-[260px] sm:top-0 w-full h-[550px] sm:h-full max-h-[calc(100vh-270px)] sm:max-h-none">
+    <div className={`absolute inset-x-0 top-[260px] sm:top-0 w-full h-[550px] sm:h-full max-h-[calc(100vh-270px)] sm:max-h-none ${isTablet ? 'pointer-events-none' : ''}`}>
       <Canvas
         frameloop="demand"
         shadows
