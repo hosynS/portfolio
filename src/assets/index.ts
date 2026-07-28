@@ -23,7 +23,7 @@ import githubIcon from "./tech/GitHub.svg";
 import postgresql from "./tech/postgresql.png";
 import kafka from "./tech/kafka.png";
 import kube from "./tech/Kube.png";
-import spring from "./tech/spring.png";
+import mlflow from "./tech/mlflow.png";
 
 import developer from "./company/developer.png";
 import networkAdmin from "./company/network-admin.png";
@@ -71,7 +71,7 @@ export {
   postgresql,
   kafka,
   kube,
-  spring,
+  mlflow,
   developer,
   networkAdmin,
   programmer,

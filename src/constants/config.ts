@@ -69,7 +69,7 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "About Me.",
-      content: `I started with backend engineering and distributed systems as my foundation, built a genuine passion for machine learning and AI along the way, and recently specialized in DevOps to close the loop — from design and code to deployment and reliability. Across all of it, I care about the same things: quality, maintainability, and software built to last!`,
+      content: `I started with backend engineering and distributed systems as my foundation, built a genuine passion for machine learning and AI along the way, and recently specialized in DevOps to close the loop — from design and code to deployment and reliability. Across all of it, I care about the same things: quality, scalability, maintainability, and software built to last!`,
     },
 
     experience: {

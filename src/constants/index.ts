@@ -24,7 +24,7 @@ import {
   bash,
   postgresql,
   kafka,
-  spring,
+  mlflow,
   bi,
   buy,
   cloud,
@@ -74,7 +74,7 @@ const services: TService[] = [
 const technologies: TTechnology[] = [
   { name: "Go", icon: golang },
   { name: "TypeScript", icon: typescript },
-  { name: "Spring Boot", icon: spring },
+  { name: "MLflow", icon: mlflow },
   { name: "Python", icon: python },
   { name: "Bash", icon: bash },
   { name: "PyTorch", icon: pytorch },
