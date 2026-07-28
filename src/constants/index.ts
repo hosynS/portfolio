@@ -65,10 +65,10 @@ export const navLinks: TNavLink[] = [
 ];
 
 const services: TService[] = [
+  { title: "Machine Learning Engineering", icon: creator },
   { title: "DevOps Engineering", icon: mobile },
-  { title: "Backend Engineering", icon: web },
-  { title: "System Integration", icon: creator },
   { title: "Data Engineering", icon: backend },
+  { title: "Backend Engineering", icon: web },
 ];
 
 const technologies: TTechnology[] = [
