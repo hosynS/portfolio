@@ -29,12 +29,12 @@ import {
   buy,
   cloud,
   nlp,
-  real,
-  gro,
+  // real,
+  // gro,
   orc,
   carrent,
   networkAdmin,
-  programmer,
+  // programmer,
   developer,
   robot,
   analytics,
@@ -45,6 +45,8 @@ import {
   keep,
   biHack,
   crudm,
+  rag,
+  kag,
 } from "../assets";
 
 // Import video demo files
@@ -52,8 +54,8 @@ import biVideo from "../assets/videos/bi.mp4";
 import buyVideo from "../assets/videos/buy.mp4";
 import cloudVideo from "../assets/videos/cloud.mp4";
 import detectoVideo from "../assets/videos/Detecto.mp4";
-import groupieVideo from "../assets/videos/groupie.mp4";
-import realtimeVideo from "../assets/videos/realtime.mp4";
+// import groupieVideo from "../assets/videos/groupie.mp4";
+// import realtimeVideo from "../assets/videos/realtime.mp4";
 import wheatVideo from "../assets/videos/wheat.mp4";
 
 export const navLinks: TNavLink[] = [
@@ -216,6 +218,7 @@ const experiences = [
     icon: networkAdmin,
     iconBg: "#383E56",
   },
+  /*
   {
     name: "Real-Time Forum",
     description: `• Built a single-page forum app using Go, SQLite, and Vanilla JavaScript, integrating post feeds, comments, and real-time private messaging.
@@ -242,6 +245,36 @@ const experiences = [
     icon: developer,
     iconBg: "#383E56",
   },
+  */
+  {
+    name: "Credit Scoring — Home Credit Default Risk",
+    description: `• Built a dbt + DuckDB feature pipeline that transforms raw credit data into a training-ready mart with 190+ features.
+
+• Replaced memory-heavy pandas workflows with vectorized SQL processing, reducing feature engineering for 356k rows to under 30 seconds.
+
+• Trained and evaluated Logistic Regression, LightGBM, XGBoost, and CatBoost models using stratified 5-fold cross-validation.
+
+• Developed a 15-model gradient-boosting ensemble achieving 0.7844 validation ROC-AUC, exceeding the 0.75 quality target.
+
+• Added SHAP analysis for global feature importance and client-level explanations of default-risk predictions.
+
+• Registered models and experiment metadata in MLflow, with artifacts versioned and stored on Hugging Face Hub.
+
+• Served real-time predictions through FastAPI with approximately 25 ms p95 latency and health-check endpoints.
+
+• Implemented PSI-based probability-of-default drift monitoring, dbt data-quality tests, Docker deployment, and GitHub Actions CI/CD.`,
+    tags: [
+      { name: "Credit Risk Modeling", color: "blue-text-gradient" },
+      { name: "Gradient Boosting", color: "green-text-gradient" },
+      { name: "MLflow", color: "pink-text-gradient" },
+      { name: "Feature Engineering", color: "blue-text-gradient" },
+      { name: "SHAP", color: "green-text-gradient" },
+    ],
+    image: kag,
+    sourceCodeLink: "https://www.kaggle.com/competitions/home-credit-default-risk/data?select=application_train.csv",
+    icon: analytics,
+    iconBg: "#383E56",
+  },
   {
     name: "BI-Solution-Hackathon",
     description: `• Designed and implemented an end-to-end data engineering and analytics pipeline using Snowflake, DuckDB, Python, SQL, and dbt, following a Bronze–Silver–Gold Medallion Architecture.
@@ -264,6 +297,7 @@ const experiences = [
     icon: analytics,
     iconBg: "#E6DEDD",
   },
+  /*
   {
     name: "Groupie Tracker Visualization",
     description: `• Built a Go web app integrating multiple JSON APIs to fetch, parse, and aggregate artists, concert locations, and event dates into structured views.
@@ -283,6 +317,36 @@ const experiences = [
     sourceCodeLink: "https://github.com/SaddamHosyn/Groupie-Tracker-Visualization.git",
     videoDemoLink: groupieVideo,
     icon: programmer,
+    iconBg: "#383E56",
+  },
+  */
+  {
+    name: "Production Financial & Policy RAG Engine",
+    description: `• Built a stateful 5-node LangGraph workflow for caching, retrieval, quality grading, generation, and telemetry.
+
+• Implemented two-stage hybrid retrieval: dense vector search with pgvector followed by Hugging Face Cross-Encoder reranking.
+
+• Achieved 100% Hit@10 retrieval recall and 78%+ faithfulness in automated RAG evaluations.
+
+• Reduced repeated-query latency to under 8 ms using SHA-256 TTL response caching.
+
+• Designed resilient PostgreSQL/pgvector storage with automatic SQLite failover and local embedding fallback.
+
+• Integrated Gemini for embeddings and grounded, source-cited answer generation.
+
+• Added MLOps telemetry for latency percentiles, token usage, cache rates, and per-request inference costs.
+
+• Deployed with FastAPI, Docker, Streamlit, and GitHub Actions CI/CD.`,
+    tags: [
+      { name: "LangGraph", color: "blue-text-gradient" },
+      { name: "RAG", color: "green-text-gradient" },
+      { name: "Vector Search", color: "pink-text-gradient" },
+      { name: "Hugging Face", color: "blue-text-gradient" },
+      { name: "MLOps", color: "green-text-gradient" },
+    ],
+    image: rag,
+    sourceCodeLink: "https://github.com/SaddamHosyn/vectorless-financial-rag.git",
+    icon: robot,
     iconBg: "#383E56",
   },
   {

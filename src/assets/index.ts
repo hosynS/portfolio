@@ -45,6 +45,8 @@ import mckinsey from "./certifications/mckinsey.png";
 import keep from "./keep.png";
 import biHack from "./bi-hack.png";
 import crudm from "./crudm.png";
+import rag from "./kag.png";
+import kag from "./kag.png";
 
 export {
   logo,
@@ -91,4 +93,6 @@ export {
   keep,
   biHack,
   crudm,
+  rag,
+  kag,
 };
