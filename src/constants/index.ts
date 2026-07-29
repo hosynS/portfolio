@@ -95,6 +95,89 @@ const technologies: TTechnology[] = [
 
 const experiences = [
   {
+    name: "Financial & Policy RAG Engine",
+    description: `• Built a stateful 5-node LangGraph workflow for caching, retrieval, quality grading, generation, and telemetry.
+
+• Implemented two-stage hybrid retrieval: dense vector search with pgvector followed by Hugging Face Cross-Encoder reranking.
+
+• Achieved 100% Hit@10 retrieval recall and 78%+ faithfulness in automated RAG evaluations.
+
+• Reduced repeated-query latency to under 8 ms using SHA-256 TTL response caching.
+
+• Designed resilient PostgreSQL/pgvector storage with automatic SQLite failover and local embedding fallback.
+
+• Integrated Gemini for embeddings and grounded, source-cited answer generation.
+
+• Added MLOps telemetry for latency percentiles, token usage, cache rates, and per-request inference costs.
+
+• Deployed with FastAPI, Docker, Streamlit, and GitHub Actions CI/CD.`,
+    tags: [
+      { name: "LangGraph", color: "blue-text-gradient" },
+      { name: "RAG", color: "green-text-gradient" },
+      { name: "Vector Search", color: "pink-text-gradient" },
+      { name: "Hugging Face", color: "blue-text-gradient" },
+      { name: "MLOps", color: "green-text-gradient" },
+    ],
+    image: ragEngine,
+    sourceCodeLink: "https://github.com/SaddamHosyn/vectorless-financial-rag.git",
+    icon: robot,
+    iconBg: "#383E56",
+  },
+  {
+    name: "Waste Management RAG",
+    description: `• Architected an AI-powered Retrieval-Augmented Generation (RAG) assistant for Mise (Åland's waste management) that accurately resolves complex citizen inquiries regarding waste fees, sorting rules, and administrative forms in Swedish.
+
+• Engineered a robust ingestion and query pipeline using PostgreSQL and pgvector to chunk, embed, and store official municipal PDF documents.
+
+• Integrated Google Gemini models to generate highly precise answers with direct document citations, enforcing strict guardrails against AI hallucinations.
+
+• Implemented custom year-weighted vector retrieval logic to dynamically prioritize the most recent waste tariffs (e.g., 2026 over 2022) without manual filtering.
+
+• Developed a parallel entity-resolution module and complex prompt logic to handle nuanced business rules, seamlessly calculating fee splits between private citizens, businesses, and non-members.
+
+• Deployed an interactive Streamlit frontend featuring automated API retries and strict safeguards against out-of-domain questions to ensure a highly reliable user experience.`,
+    tags: [
+      { name: "RAG Systems", color: "blue-text-gradient" },
+      { name: "Vector Databases (pgvector)", color: "green-text-gradient" },
+      { name: "Google Gemini", color: "pink-text-gradient" },
+      { name: "Prompt Engineering", color: "blue-text-gradient" },
+      { name: "Python Pipelines", color: "green-text-gradient" },
+    ],
+    image: misephoto,
+    sourceCodeLink: "https://github.com/SaddamHosyn/mise-rag-project.git",
+    icon: robot,
+    iconBg: "#E6DEDD",
+  },
+  {
+    name: "Credit Default Scorer",
+    description: `• Built a dbt + DuckDB feature pipeline that transforms raw credit data into a training-ready mart with 190+ features.
+
+• Replaced memory-heavy pandas workflows with vectorized SQL processing, reducing feature engineering for 356k rows to under 30 seconds.
+
+• Trained and evaluated Logistic Regression, LightGBM, XGBoost, and CatBoost models using stratified 5-fold cross-validation.
+
+• Developed a 15-model gradient-boosting ensemble achieving 0.7844 validation ROC-AUC, exceeding the 0.75 quality target.
+
+• Added SHAP analysis for global feature importance and client-level explanations of default-risk predictions.
+
+• Registered models and experiment metadata in MLflow, with artifacts versioned and stored on Hugging Face Hub.
+
+• Served real-time predictions through FastAPI with approximately 25 ms p95 latency and health-check endpoints.
+
+• Implemented PSI-based probability-of-default drift monitoring, dbt data-quality tests, Docker deployment, and GitHub Actions CI/CD.`,
+    tags: [
+      { name: "Credit Risk Modeling", color: "blue-text-gradient" },
+      { name: "Gradient Boosting", color: "green-text-gradient" },
+      { name: "MLflow", color: "pink-text-gradient" },
+      { name: "Feature Engineering", color: "blue-text-gradient" },
+      { name: "SHAP", color: "green-text-gradient" },
+    ],
+    image: creditScoring,
+    sourceCodeLink: "https://www.kaggle.com/competitions/home-credit-default-risk/data?select=application_train.csv",
+    icon: analytics,
+    iconBg: "#383E56",
+  },
+  {
     name: "Code-Keeper",
     description: `• Provisioned highly available AWS cloud infrastructure across staging and production environments using Terraform, establishing an ECS-based container orchestration foundation with isolated VPCs, Application Load Balancers, and S3 remote state.
 
@@ -250,35 +333,6 @@ const experiences = [
   },
   */
   {
-    name: "Credit Scoring — Home Credit Default Risk",
-    description: `• Built a dbt + DuckDB feature pipeline that transforms raw credit data into a training-ready mart with 190+ features.
-
-• Replaced memory-heavy pandas workflows with vectorized SQL processing, reducing feature engineering for 356k rows to under 30 seconds.
-
-• Trained and evaluated Logistic Regression, LightGBM, XGBoost, and CatBoost models using stratified 5-fold cross-validation.
-
-• Developed a 15-model gradient-boosting ensemble achieving 0.7844 validation ROC-AUC, exceeding the 0.75 quality target.
-
-• Added SHAP analysis for global feature importance and client-level explanations of default-risk predictions.
-
-• Registered models and experiment metadata in MLflow, with artifacts versioned and stored on Hugging Face Hub.
-
-• Served real-time predictions through FastAPI with approximately 25 ms p95 latency and health-check endpoints.
-
-• Implemented PSI-based probability-of-default drift monitoring, dbt data-quality tests, Docker deployment, and GitHub Actions CI/CD.`,
-    tags: [
-      { name: "Credit Risk Modeling", color: "blue-text-gradient" },
-      { name: "Gradient Boosting", color: "green-text-gradient" },
-      { name: "MLflow", color: "pink-text-gradient" },
-      { name: "Feature Engineering", color: "blue-text-gradient" },
-      { name: "SHAP", color: "green-text-gradient" },
-    ],
-    image: creditScoring,
-    sourceCodeLink: "https://www.kaggle.com/competitions/home-credit-default-risk/data?select=application_train.csv",
-    icon: analytics,
-    iconBg: "#383E56",
-  },
-  {
     name: "BI-Solution-Hackathon",
     description: `• Designed and implemented an end-to-end data engineering and analytics pipeline using Snowflake, DuckDB, Python, SQL, and dbt, following a Bronze–Silver–Gold Medallion Architecture.
 
@@ -323,35 +377,6 @@ const experiences = [
     iconBg: "#383E56",
   },
   */
-  {
-    name: "Production Financial & Policy RAG Engine",
-    description: `• Built a stateful 5-node LangGraph workflow for caching, retrieval, quality grading, generation, and telemetry.
-
-• Implemented two-stage hybrid retrieval: dense vector search with pgvector followed by Hugging Face Cross-Encoder reranking.
-
-• Achieved 100% Hit@10 retrieval recall and 78%+ faithfulness in automated RAG evaluations.
-
-• Reduced repeated-query latency to under 8 ms using SHA-256 TTL response caching.
-
-• Designed resilient PostgreSQL/pgvector storage with automatic SQLite failover and local embedding fallback.
-
-• Integrated Gemini for embeddings and grounded, source-cited answer generation.
-
-• Added MLOps telemetry for latency percentiles, token usage, cache rates, and per-request inference costs.
-
-• Deployed with FastAPI, Docker, Streamlit, and GitHub Actions CI/CD.`,
-    tags: [
-      { name: "LangGraph", color: "blue-text-gradient" },
-      { name: "RAG", color: "green-text-gradient" },
-      { name: "Vector Search", color: "pink-text-gradient" },
-      { name: "Hugging Face", color: "blue-text-gradient" },
-      { name: "MLOps", color: "green-text-gradient" },
-    ],
-    image: ragEngine,
-    sourceCodeLink: "https://github.com/SaddamHosyn/vectorless-financial-rag.git",
-    icon: robot,
-    iconBg: "#383E56",
-  },
   /*
   {
     name: "BI-Solution-Project",
@@ -381,31 +406,6 @@ const experiences = [
     iconBg: "#E6DEDD",
   },
   */
-  {
-    name: "Mise Waste Management RAG Assistant",
-    description: `• Architected an AI-powered Retrieval-Augmented Generation (RAG) assistant for Mise (Åland's waste management) that accurately resolves complex citizen inquiries regarding waste fees, sorting rules, and administrative forms in Swedish.
-
-• Engineered a robust ingestion and query pipeline using PostgreSQL and pgvector to chunk, embed, and store official municipal PDF documents.
-
-• Integrated Google Gemini models to generate highly precise answers with direct document citations, enforcing strict guardrails against AI hallucinations.
-
-• Implemented custom year-weighted vector retrieval logic to dynamically prioritize the most recent waste tariffs (e.g., 2026 over 2022) without manual filtering.
-
-• Developed a parallel entity-resolution module and complex prompt logic to handle nuanced business rules, seamlessly calculating fee splits between private citizens, businesses, and non-members.
-
-• Deployed an interactive Streamlit frontend featuring automated API retries and strict safeguards against out-of-domain questions to ensure a highly reliable user experience.`,
-    tags: [
-      { name: "RAG Systems", color: "blue-text-gradient" },
-      { name: "Vector Databases (pgvector)", color: "green-text-gradient" },
-      { name: "Google Gemini", color: "pink-text-gradient" },
-      { name: "Prompt Engineering", color: "blue-text-gradient" },
-      { name: "Python Pipelines", color: "green-text-gradient" },
-    ],
-    image: misephoto,
-    sourceCodeLink: "https://github.com/SaddamHosyn/mise-rag-project.git",
-    icon: robot,
-    iconBg: "#E6DEDD",
-  },
 ];
 
 const projects: TProject[] = [
