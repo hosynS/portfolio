@@ -25,7 +25,7 @@ import {
   postgresql,
   kafka,
   mlflow,
-  bi,
+  // bi,
   buy,
   cloud,
   nlp,
@@ -39,21 +39,24 @@ import {
   robot,
   analytics,
   statistics,
-  det,
+  // det,
   kube,
   mckinsey,
   keep,
   biHack,
   crudm,
-  rag,
+  // rag,
   kag,
+  ragEngine,
+  creditScoring,
+  misephoto,
 } from "../assets";
 
 // Import video demo files
-import biVideo from "../assets/videos/bi.mp4";
+// import biVideo from "../assets/videos/bi.mp4";
 import buyVideo from "../assets/videos/buy.mp4";
 import cloudVideo from "../assets/videos/cloud.mp4";
-import detectoVideo from "../assets/videos/Detecto.mp4";
+// import detectoVideo from "../assets/videos/Detecto.mp4";
 // import groupieVideo from "../assets/videos/groupie.mp4";
 // import realtimeVideo from "../assets/videos/realtime.mp4";
 import wheatVideo from "../assets/videos/wheat.mp4";
@@ -270,7 +273,7 @@ const experiences = [
       { name: "Feature Engineering", color: "blue-text-gradient" },
       { name: "SHAP", color: "green-text-gradient" },
     ],
-    image: kag,
+    image: creditScoring,
     sourceCodeLink: "https://www.kaggle.com/competitions/home-credit-default-risk/data?select=application_train.csv",
     icon: analytics,
     iconBg: "#383E56",
@@ -344,11 +347,12 @@ const experiences = [
       { name: "Hugging Face", color: "blue-text-gradient" },
       { name: "MLOps", color: "green-text-gradient" },
     ],
-    image: rag,
+    image: ragEngine,
     sourceCodeLink: "https://github.com/SaddamHosyn/vectorless-financial-rag.git",
     icon: robot,
     iconBg: "#383E56",
   },
+  /*
   {
     name: "BI-Solution-Project",
     description: `• Built an end-to-end BI solution analyzing market penetration, tourism demand, and per-capita spending across 16 Åland municipalities.
@@ -376,9 +380,36 @@ const experiences = [
     icon: robot,
     iconBg: "#E6DEDD",
   },
+  */
+  {
+    name: "Mise Waste Management RAG Assistant",
+    description: `• Architected an AI-powered Retrieval-Augmented Generation (RAG) assistant for Mise (Åland's waste management) that accurately resolves complex citizen inquiries regarding waste fees, sorting rules, and administrative forms in Swedish.
+
+• Engineered a robust ingestion and query pipeline using PostgreSQL and pgvector to chunk, embed, and store official municipal PDF documents.
+
+• Integrated Google Gemini models to generate highly precise answers with direct document citations, enforcing strict guardrails against AI hallucinations.
+
+• Implemented custom year-weighted vector retrieval logic to dynamically prioritize the most recent waste tariffs (e.g., 2026 over 2022) without manual filtering.
+
+• Developed a parallel entity-resolution module and complex prompt logic to handle nuanced business rules, seamlessly calculating fee splits between private citizens, businesses, and non-members.
+
+• Deployed an interactive Streamlit frontend featuring automated API retries and strict safeguards against out-of-domain questions to ensure a highly reliable user experience.`,
+    tags: [
+      { name: "RAG Systems", color: "blue-text-gradient" },
+      { name: "Vector Databases (pgvector)", color: "green-text-gradient" },
+      { name: "Google Gemini", color: "pink-text-gradient" },
+      { name: "Prompt Engineering", color: "blue-text-gradient" },
+      { name: "Python Pipelines", color: "green-text-gradient" },
+    ],
+    image: misephoto,
+    sourceCodeLink: "https://github.com/SaddamHosyn/mise-rag-project.git",
+    icon: robot,
+    iconBg: "#E6DEDD",
+  },
 ];
 
 const projects: TProject[] = [
+  /*
   {
     name: "Detecto",
     description: `• Engineered an end-to-end YOLOv8 computer vision system for real-time person detection and occupancy counting.
@@ -399,6 +430,32 @@ const projects: TProject[] = [
     videoDemoLink: detectoVideo,
     icon: robot,
     iconBg: "#E6DEDD",
+  },
+  */
+  {
+    name: "Titanic Survival Prediction",
+    description: `• Developed an end-to-end machine learning pipeline to predict Titanic passenger survival, highlighting advanced feature engineering and a practical demonstration of the bias-variance tradeoff where simple models ultimately outclassed complex ensembles.
+
+• Engineered high-impact features like ticket-based survival rates and imputed missing data using IterativeImputer to capture nuanced family and group dynamics.
+
+• Designed and evaluated complex predictive architectures, including Stacking (XGBoost, LightGBM, Random Forest) and soft-voting ensembles.
+
+• Identified a critical "overfitting paradox" through cross-validation, revealing that highly tuned ensemble models memorized training noise rather than generalizable patterns.
+
+• Achieved a top Kaggle score (0.78229) using a heavily regularized Logistic Regression model, maintaining a highly robust 2.8% generalization gap.
+
+• Structured the repository with production-ready best practices, including clear dependency management and reproducible Jupyter and Python execution paths.`,
+    tags: [
+      { name: "Feature Engineering", color: "blue-text-gradient" },
+      { name: "Bias-Variance Tradeoff", color: "green-text-gradient" },
+      { name: "Logistic Regression", color: "pink-text-gradient" },
+      { name: "Ensemble Modeling", color: "blue-text-gradient" },
+      { name: "Cross-Validation", color: "green-text-gradient" },
+    ],
+    image: kag,
+    sourceCodeLink: "https://github.com/SaddamHosyn/kaggletitanic.git",
+    icon: statistics,
+    iconBg: "#383E56",
   },
   {
     name: "NLP Scrapper",

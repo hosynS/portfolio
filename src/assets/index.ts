@@ -47,6 +47,9 @@ import biHack from "./bi-hack.png";
 import crudm from "./crudm.png";
 import rag from "./kag.png";
 import kag from "./kag.png";
+import ragEngine from "./rag-engine.jpg";
+import creditScoring from "./credit-scoring.jpg";
+import misephoto from "./misephoto.png";
 
 export {
   logo,
@@ -95,4 +98,7 @@ export {
   crudm,
   rag,
   kag,
+  ragEngine,
+  creditScoring,
+  misephoto,
 };
