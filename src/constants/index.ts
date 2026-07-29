@@ -137,11 +137,11 @@ const experiences = [
 
 • Deployed an interactive Streamlit frontend featuring automated API retries and strict safeguards against out-of-domain questions to ensure a highly reliable user experience.`,
     tags: [
-      { name: "RAG Systems", color: "blue-text-gradient" },
-      { name: "Vector Databases (pgvector)", color: "green-text-gradient" },
-      { name: "Google Gemini", color: "pink-text-gradient" },
-      { name: "Prompt Engineering", color: "blue-text-gradient" },
-      { name: "Python Pipelines", color: "green-text-gradient" },
+      { name: "RAG", color: "blue-text-gradient" },
+      { name: "Contextual Chunking", color: "green-text-gradient" },
+      { name: "Automated Guardrails", color: "pink-text-gradient" },
+      { name: "pgvector", color: "blue-text-gradient" },
+      { name: "Entity Resolution", color: "green-text-gradient" },
     ],
     image: misephoto,
     sourceCodeLink: "https://github.com/SaddamHosyn/mise-rag-project.git",
