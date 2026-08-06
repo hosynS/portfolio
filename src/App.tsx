@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
+import { ReactLenis } from "lenis/react";
 
 import {
   About,
@@ -23,24 +24,26 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <CursorEffect />
-      <div className="bg-primary relative z-0 overflow-x-hidden">
-        <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
-          <Navbar />
-          <Hero />
+    <ReactLenis root options={{ autoRaf: true, anchors: true, allowNestedScroll: true }}>
+      <BrowserRouter>
+        <CursorEffect />
+        <div className="bg-primary relative z-0 overflow-x-hidden">
+          <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+            <Navbar />
+            <Hero />
+          </div>
+          <About />
+          <Tech />
+          <Experience />
+          <Works />
+          <Certifications />
+          <div className="relative z-0">
+            <Contact />
+            <StarsCanvas />
+          </div>
         </div>
-        <About />
-        <Tech />
-        <Experience />
-        <Works />
-        <Certifications />
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
-        </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ReactLenis>
   );
 };
 

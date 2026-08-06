@@ -244,7 +244,7 @@ const Works = () => {
                 </div>
 
                 {/* Scrollable details text details */}
-                <div className="p-6 overflow-y-auto flex-1 custom-scrollbar">
+                <div className="p-6 overflow-y-auto flex-1 custom-scrollbar" data-lenis-prevent>
                   <div className="flex items-center gap-4">
                     {activeProject.icon && (
                       <div
