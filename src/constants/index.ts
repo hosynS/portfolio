@@ -25,17 +25,17 @@ import {
   postgresql,
   kafka,
   mlflow,
-  // bi,
+  bi,
   buy,
   cloud,
-  nlp,
+  // nlp,
   // real,
   // gro,
   orc,
   carrent,
   networkAdmin,
   // programmer,
-  developer,
+  // developer,
   robot,
   analytics,
   statistics,
@@ -53,7 +53,7 @@ import {
 } from "../assets";
 
 // Import video demo files
-// import biVideo from "../assets/videos/bi.mp4";
+import biVideo from "../assets/videos/bi.mp4";
 import buyVideo from "../assets/videos/buy.mp4";
 import cloudVideo from "../assets/videos/cloud.mp4";
 // import detectoVideo from "../assets/videos/Detecto.mp4";
@@ -375,36 +375,6 @@ const experiences = [
     videoDemoLink: groupieVideo,
     icon: programmer,
     iconBg: "#383E56",
-  },
-  */
-  /*
-  {
-    name: "BI-Solution-Project",
-    description: `• Built an end-to-end BI solution analyzing market penetration, tourism demand, and per-capita spending across 16 Åland municipalities.
-
-• Engineered a multi-source pipeline integrating JSON sales logs, ÅSUB demographic APIs, and tourism CSVs into a centralized DuckDB warehouse.
-
-• Architected a Medallion ELT pipeline using Python for raw ingestion and SQL for cross-source standardization across Bronze, Silver, and Gold layers.
-
-• Modeled business aggregates for revenue, seasonal trends, and YoY growth using dbt and GNU Make for modular, reproducible pipelines.
-
-• Delivered an interactive Streamlit dashboard for KPI tracking, municipality deep dives, and product-seasonality analysis.
-
-• Processed 5M+ sales records to surface key 2025 insights, including €101M+ in revenue, 204,579 transactions.`,
-    tags: [
-      { name: "Python", color: "blue-text-gradient" },
-      { name: "DuckDB", color: "green-text-gradient" },
-      { name: "Streamlit", color: "pink-text-gradient" },
-      { name: "ELT", color: "blue-text-gradient" },
-      { name: "dbt", color: "green-text-gradient" },
-      { name: "SQL", color: "pink-text-gradient" },
-    ],
-    image: bi,
-    sourceCodeLink: "https://github.com/SaddamHosyn/bi-solution-course-project",
-    videoDemoLink: biVideo,
-    icon: robot,
-    iconBg: "#E6DEDD",
-  },
   */
 ];
 
@@ -458,6 +428,34 @@ const projects: TProject[] = [
     iconBg: "#383E56",
   },
   {
+    name: "BI-Solution-Project",
+    description: `• Built an end-to-end BI solution analyzing market penetration, tourism demand, and per-capita spending across 16 Åland municipalities.
+
+• Engineered a multi-source pipeline integrating JSON sales logs, ÅSUB demographic APIs, and tourism CSVs into a centralized DuckDB warehouse.
+
+• Architected a Medallion ELT pipeline using Python for raw ingestion and SQL for cross-source standardization across Bronze, Silver, and Gold layers.
+
+• Modeled business aggregates for revenue, seasonal trends, and YoY growth using dbt and GNU Make for modular, reproducible pipelines.
+
+• Delivered an interactive Streamlit dashboard for KPI tracking, municipality deep dives, and product-seasonality analysis.
+
+• Processed 5M+ sales records to surface key 2025 insights, including €101M+ in revenue, 204,579 transactions.`,
+    tags: [
+      { name: "Python", color: "blue-text-gradient" },
+      { name: "DuckDB", color: "green-text-gradient" },
+      { name: "Streamlit", color: "pink-text-gradient" },
+      { name: "ELT", color: "blue-text-gradient" },
+      { name: "dbt", color: "green-text-gradient" },
+      { name: "SQL", color: "pink-text-gradient" },
+    ],
+    image: bi,
+    sourceCodeLink: "https://github.com/SaddamHosyn/bi-solution-course-project",
+    videoDemoLink: biVideo,
+    icon: robot,
+    iconBg: "#E6DEDD",
+  },
+  /*
+  {
     name: "NLP Scrapper",
     description: `• Engineered an automated NLP pipeline to scrape live Guardian news and extract insights at scale.
 
@@ -478,6 +476,7 @@ const projects: TProject[] = [
     icon: developer,
     iconBg: "#383E56",
   },
+  */
   {
     name: "Wheat Disease Detection",
     description: `• Engineered a YOLOv5m computer vision pipeline to improve agricultural disease detection over standard models.

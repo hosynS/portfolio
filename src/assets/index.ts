@@ -38,7 +38,7 @@ import buy from "./buy.png";
 import real from "./real.png";
 import gro from "./gro.png";
 import orc from "./orc.png";
-import nlp from "./nlp.png";
+// import nlp from "./nlp.png";
 import det from "./det.png";
 import cloud from "./cloud.png";
 import mckinsey from "./certifications/mckinsey.png";
@@ -90,7 +90,7 @@ export {
   cloud,
   gro,
   orc,
-  nlp,
+  // nlp,
   det,
   mckinsey,
   keep,
