@@ -42,6 +42,8 @@ import {
   // det,
   kube,
   mckinsey,
+  deloitteDataAnalytics,
+  confluentDataStreaming,
   keep,
   biHack,
   crudm,
@@ -558,6 +560,20 @@ const certifications: TCertification[] = [
     link: mckinsey,
     type: "image",
     credentialUrl: "https://www.credly.com/badges/dead2894-8b7f-4934-814a-d5d0d011cc1d",
+  },
+  {
+    title: "Data Analytics Job Simulation",
+    issuer: "Deloitte",
+    date: "August 29, 2026",
+    link: deloitteDataAnalytics,
+    type: "image",
+  },
+  {
+    title: "Data Streaming Engineer Foundations",
+    issuer: "Confluent",
+    date: "October 3, 2026",
+    link: confluentDataStreaming,
+    type: "image",
   },
 ];
 

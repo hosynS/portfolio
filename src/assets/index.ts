@@ -42,6 +42,8 @@ import orc from "./orc.png";
 import det from "./det.png";
 import cloud from "./cloud.png";
 import mckinsey from "./certifications/mckinsey.png";
+import deloitteDataAnalytics from "./certifications/deloitte-data-analytics.png";
+import confluentDataStreaming from "./certifications/confluent-data-streaming.png";
 import keep from "./keep.png";
 import biHack from "./bi-hack.png";
 import crudm from "./crudm.png";
@@ -93,6 +95,8 @@ export {
   // nlp,
   det,
   mckinsey,
+  deloitteDataAnalytics,
+  confluentDataStreaming,
   keep,
   biHack,
   crudm,

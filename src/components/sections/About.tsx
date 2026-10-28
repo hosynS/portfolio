@@ -7,7 +7,7 @@ import { SectionWrapper } from "../../hoc";
 import { fadeIn } from "../../utils/motion";
 import { config } from "../../constants/config";
 import { Header } from "../atoms/Header";
-import another from "../../assets/another.png";
+import personal from "../../assets/personal.png";
 
 interface IServiceCard {
   index: number;
@@ -60,7 +60,7 @@ const About = () => {
   }
 >
           <img 
-            src={another} 
+            src={personal} 
             alt="Saddam Hussain" 
             className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-full object-cover shadow-card"
           />
