@@ -1,9 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../../constants/styles";
 import { ComputersCanvas } from "../canvas";
 import { config } from "../../constants/config";
+
+const playTypingSound = (audioContext: AudioContext | null) => {
+  if (!audioContext || audioContext.state !== "running") return;
+
+  const oscillator = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+  const now = audioContext.currentTime;
+
+  oscillator.type = "sine";
+  oscillator.frequency.value = 620 + Math.random() * 100;
+  gain.gain.setValueAtTime(0.035, now);
+  gain.gain.exponentialRampToValueAtTime(0.001, now + 0.045);
+  oscillator.connect(gain);
+  gain.connect(audioContext.destination);
+  oscillator.start(now);
+  oscillator.stop(now + 0.045);
+};
 
 const Hero = () => {
   const headingPrefix = "Hi, I'm ";
@@ -11,35 +28,69 @@ const Hero = () => {
   const subtitle = config.hero.p.join(" ");
   const [typedHeading, setTypedHeading] = useState("");
   const [typedSubtitle, setTypedSubtitle] = useState("");
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const hasInteractedRef = useRef(false);
 
   useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
     let headingIndex = 0;
     let subtitleIndex = 0;
-    let timer: ReturnType<typeof setTimeout>;
 
-    const typeHeading = () => {
-      if (headingIndex < headingPrefix.length + headingName.length) {
-        headingIndex += 1;
-        const typed = `${headingPrefix}${headingName}`.slice(0, headingIndex);
-        setTypedHeading(typed);
-        timer = setTimeout(typeHeading, 75);
-        return;
-      }
+    const typeText = (withSound: boolean) => {
+      const typeSubtitle = () => {
+        if (subtitleIndex < subtitle.length) {
+          subtitleIndex += 1;
+          setTypedSubtitle(subtitle.slice(0, subtitleIndex));
+          if (withSound) playTypingSound(audioContextRef.current);
+          timer = setTimeout(typeSubtitle, 45);
+        }
+      };
 
-      timer = setTimeout(typeSubtitle, 350);
+      const typeHeading = () => {
+        if (headingIndex < headingPrefix.length + headingName.length) {
+          headingIndex += 1;
+          const typed = `${headingPrefix}${headingName}`.slice(0, headingIndex);
+          setTypedHeading(typed);
+          if (withSound) playTypingSound(audioContextRef.current);
+          timer = setTimeout(typeHeading, 75);
+          return;
+        }
+
+        timer = setTimeout(typeSubtitle, 350);
+      };
+
+      typeHeading();
     };
 
-    const typeSubtitle = () => {
-      if (subtitleIndex < subtitle.length) {
-        subtitleIndex += 1;
-        setTypedSubtitle(subtitle.slice(0, subtitleIndex));
-        timer = setTimeout(typeSubtitle, 45);
+    const enableTypingSound = () => {
+      if (hasInteractedRef.current) return;
+      hasInteractedRef.current = true;
+
+      if (!audioContextRef.current) {
+        audioContextRef.current = new AudioContext();
       }
+
+      void audioContextRef.current.resume().then(() => {
+        clearTimeout(timer);
+        headingIndex = 0;
+        subtitleIndex = 0;
+        setTypedHeading("");
+        setTypedSubtitle("");
+        typeText(true);
+      });
     };
 
-    typeHeading();
-    return () => clearTimeout(timer);
-  }, [headingName, subtitle]);
+    typeText(false);
+    window.addEventListener("pointerdown", enableTypingSound);
+    window.addEventListener("keydown", enableTypingSound);
+
+    return () => {
+      window.removeEventListener("pointerdown", enableTypingSound);
+      window.removeEventListener("keydown", enableTypingSound);
+      clearTimeout(timer);
+      void audioContextRef.current?.close();
+    };
+  }, []);
 
   const typedPrefix = typedHeading.slice(0, headingPrefix.length);
   const typedName = typedHeading.slice(headingPrefix.length);
@@ -55,7 +106,7 @@ const Hero = () => {
           <div className="violet-gradient h-40 w-1 sm:h-80" />
         </div>
 
-        <div className="max-w-3xl">
+        <div className="max-w-none">
           <h1
             aria-live="polite"
             className={`${styles.heroHeadText} text-white tracking-tight`}
@@ -70,7 +121,7 @@ const Hero = () => {
           </h1>
           <p
             aria-live="polite"
-            className={`${styles.heroSubText} mt-4 max-w-2xl whitespace-pre-wrap font-medium leading-relaxed tracking-wide text-white/80`}
+            className={`${styles.heroSubText} mt-4 max-w-none whitespace-nowrap font-medium leading-relaxed tracking-wide text-white/80 !text-[clamp(0.65rem,2.4vw,1.875rem)]`}
           >
             {typedSubtitle}
             {headingComplete && (
