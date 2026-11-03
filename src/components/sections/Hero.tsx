@@ -55,15 +55,27 @@ const Hero = () => {
           <div className="violet-gradient h-40 w-1 sm:h-80" />
         </div>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
+        <div className="max-w-3xl">
+          <h1
+            aria-live="polite"
+            className={`${styles.heroHeadText} text-white tracking-tight`}
+          >
             {typedPrefix}
-            <span className="text-[#915EFF]">{typedName}</span>
-            {!headingComplete && <span className="ml-1 inline-block h-[1em] w-[0.12em] animate-pulse bg-[#915EFF] align-[-0.1em]" />}
+            <span className="bg-gradient-to-r from-[#915EFF] via-[#c084fc] to-[#f0abfc] bg-clip-text text-transparent">
+              {typedName}
+            </span>
+            {!headingComplete && (
+              <span className="ml-2 inline-block h-[0.9em] w-[0.12em] animate-pulse bg-[#915EFF] align-[-0.08em] shadow-[0_0_12px_#915EFF]" />
+            )}
           </h1>
-          <p className={`${styles.heroSubText} text-white-100 mt-2`}>
+          <p
+            aria-live="polite"
+            className={`${styles.heroSubText} mt-4 max-w-2xl whitespace-pre-wrap font-medium leading-relaxed tracking-wide text-white/80`}
+          >
             {typedSubtitle}
-            {headingComplete && <span className="ml-1 inline-block h-[1em] w-[0.1em] animate-pulse bg-white align-[-0.1em]" />}
+            {headingComplete && (
+              <span className="ml-2 inline-block h-[0.95em] w-[0.1em] animate-pulse bg-white align-[-0.08em] shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+            )}
           </p>
         </div>
       </div>
