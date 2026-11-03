@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../../constants/styles";
@@ -5,6 +6,45 @@ import { ComputersCanvas } from "../canvas";
 import { config } from "../../constants/config";
 
 const Hero = () => {
+  const headingPrefix = "Hi, I'm ";
+  const headingName = config.hero.name;
+  const subtitle = config.hero.p.join(" ");
+  const [typedHeading, setTypedHeading] = useState("");
+  const [typedSubtitle, setTypedSubtitle] = useState("");
+
+  useEffect(() => {
+    let headingIndex = 0;
+    let subtitleIndex = 0;
+    let timer: ReturnType<typeof setTimeout>;
+
+    const typeHeading = () => {
+      if (headingIndex < headingPrefix.length + headingName.length) {
+        headingIndex += 1;
+        const typed = `${headingPrefix}${headingName}`.slice(0, headingIndex);
+        setTypedHeading(typed);
+        timer = setTimeout(typeHeading, 75);
+        return;
+      }
+
+      timer = setTimeout(typeSubtitle, 350);
+    };
+
+    const typeSubtitle = () => {
+      if (subtitleIndex < subtitle.length) {
+        subtitleIndex += 1;
+        setTypedSubtitle(subtitle.slice(0, subtitleIndex));
+        timer = setTimeout(typeSubtitle, 45);
+      }
+    };
+
+    typeHeading();
+    return () => clearTimeout(timer);
+  }, [headingName, subtitle]);
+
+  const typedPrefix = typedHeading.slice(0, headingPrefix.length);
+  const typedName = typedHeading.slice(headingPrefix.length);
+  const headingComplete = typedHeading.length === headingPrefix.length + headingName.length;
+
   return (
     <section className={`relative mx-auto h-screen w-full`}>
       <div
@@ -17,11 +57,13 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
+            {typedPrefix}
+            <span className="text-[#915EFF]">{typedName}</span>
+            {!headingComplete && <span className="ml-1 inline-block h-[1em] w-[0.12em] animate-pulse bg-[#915EFF] align-[-0.1em]" />}
           </h1>
           <p className={`${styles.heroSubText} text-white-100 mt-2`}>
-            {config.hero.p[0]} <br className="hidden sm:block" />
-            {config.hero.p[1]}
+            {typedSubtitle}
+            {headingComplete && <span className="ml-1 inline-block h-[1em] w-[0.1em] animate-pulse bg-white align-[-0.1em]" />}
           </p>
         </div>
       </div>
