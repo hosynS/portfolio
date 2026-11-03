@@ -72,7 +72,7 @@ const Hero = () => {
           </h1>
           <p
             aria-live="polite"
-            className={`${styles.heroSubText} mt-4 max-w-none whitespace-nowrap font-medium leading-relaxed tracking-wide text-white/80 !text-[clamp(0.65rem,2.4vw,1.875rem)]`}
+            className={`${styles.heroSubText} mt-4 max-w-none whitespace-nowrap font-medium leading-relaxed tracking-wide text-white/80 !text-[clamp(0.77rem,2.55vw,2rem)]`}
           >
             {typedSubtitle}
             {headingComplete && (
