@@ -1,26 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../../constants/styles";
 import { ComputersCanvas } from "../canvas";
 import { config } from "../../constants/config";
-
-const playTypingSound = (audioContext: AudioContext | null) => {
-  if (!audioContext || audioContext.state !== "running") return;
-
-  const oscillator = audioContext.createOscillator();
-  const gain = audioContext.createGain();
-  const now = audioContext.currentTime;
-
-  oscillator.type = "sine";
-  oscillator.frequency.value = 620 + Math.random() * 100;
-  gain.gain.setValueAtTime(0.035, now);
-  gain.gain.exponentialRampToValueAtTime(0.001, now + 0.045);
-  oscillator.connect(gain);
-  gain.connect(audioContext.destination);
-  oscillator.start(now);
-  oscillator.stop(now + 0.045);
-};
 
 const Hero = () => {
   const headingPrefix = "Hi, I'm ";
@@ -28,67 +11,35 @@ const Hero = () => {
   const subtitle = config.hero.p.join(" ");
   const [typedHeading, setTypedHeading] = useState("");
   const [typedSubtitle, setTypedSubtitle] = useState("");
-  const audioContextRef = useRef<AudioContext | null>(null);
-  const hasInteractedRef = useRef(false);
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
     let headingIndex = 0;
     let subtitleIndex = 0;
 
-    const typeText = (withSound: boolean) => {
-      const typeSubtitle = () => {
-        if (subtitleIndex < subtitle.length) {
-          subtitleIndex += 1;
-          setTypedSubtitle(subtitle.slice(0, subtitleIndex));
-          if (withSound) playTypingSound(audioContextRef.current);
-          timer = setTimeout(typeSubtitle, 45);
-        }
-      };
-
-      const typeHeading = () => {
-        if (headingIndex < headingPrefix.length + headingName.length) {
-          headingIndex += 1;
-          const typed = `${headingPrefix}${headingName}`.slice(0, headingIndex);
-          setTypedHeading(typed);
-          if (withSound) playTypingSound(audioContextRef.current);
-          timer = setTimeout(typeHeading, 75);
-          return;
-        }
-
-        timer = setTimeout(typeSubtitle, 350);
-      };
-
-      typeHeading();
+    const typeSubtitle = () => {
+      if (subtitleIndex < subtitle.length) {
+        subtitleIndex += 1;
+        setTypedSubtitle(subtitle.slice(0, subtitleIndex));
+        timer = setTimeout(typeSubtitle, 45);
+      }
     };
 
-    const enableTypingSound = () => {
-      if (hasInteractedRef.current) return;
-      hasInteractedRef.current = true;
-
-      if (!audioContextRef.current) {
-        audioContextRef.current = new AudioContext();
+    const typeHeading = () => {
+      if (headingIndex < headingPrefix.length + headingName.length) {
+        headingIndex += 1;
+        setTypedHeading(`${headingPrefix}${headingName}`.slice(0, headingIndex));
+        timer = setTimeout(typeHeading, 75);
+        return;
       }
 
-      void audioContextRef.current.resume().then(() => {
-        clearTimeout(timer);
-        headingIndex = 0;
-        subtitleIndex = 0;
-        setTypedHeading("");
-        setTypedSubtitle("");
-        typeText(true);
-      });
+      timer = setTimeout(typeSubtitle, 350);
     };
 
-    typeText(false);
-    window.addEventListener("pointerdown", enableTypingSound);
-    window.addEventListener("keydown", enableTypingSound);
+    typeHeading();
 
     return () => {
-      window.removeEventListener("pointerdown", enableTypingSound);
-      window.removeEventListener("keydown", enableTypingSound);
       clearTimeout(timer);
-      void audioContextRef.current?.close();
     };
   }, []);
 
