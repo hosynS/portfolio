@@ -195,5 +195,5 @@ npm run build
 
 ## ✉️ Contact Us
 
-Feel free to reach out via email at: **abc92@gmail.com** or connect with me on
+Feel free to reach out via email at: **shosyn@outlook.com** or connect with me on
 [LinkedIn](https://www.linkedin.com/in/hosyn/).
