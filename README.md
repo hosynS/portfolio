@@ -3,7 +3,7 @@
 ## 🌐 Live Demo
 
 Explore the live demonstration of the project:
-[saddamhosyn.github.io/portfolio](https://saddamhosyn.github.io/portfolio/)
+[hosyns.github.io/portfolio](https://hosyns.github.io/portfolio/)
 
 ## 📝 Description
 
@@ -132,7 +132,7 @@ The contact form uses EmailJS to send client-side emails. You need to create a f
 Download or clone this repo by using the link below:
 
 ```bash
-git clone https://github.com/SaddamHosyn/portfolio.git
+git clone https://github.com/hosynS/portfolio.git
 ```
 
 **Step 2 (Install Dependencies):**
@@ -168,7 +168,7 @@ VITE_EMAILJS_ACCESS_TOKEN=your_access_token
 The portfolio is set up to automatically deploy to **GitHub Pages** using GitHub Actions workflows defined in `.github/workflows/deploy.yml`. 
 
 Every push to the `main` branch compiles the production bundle and deploys the update automatically to:
-**https://saddamhosyn.github.io/portfolio/**
+**https://hosyns.github.io/portfolio/**
 
 You can also run a manual build locally:
 

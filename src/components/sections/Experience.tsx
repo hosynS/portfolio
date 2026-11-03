@@ -153,7 +153,7 @@ const Experience = () => {
         <motion.a
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          href="https://github.com/SaddamHosyn"
+          href="https://github.com/hosynS"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors text-[14px] border border-[#4f86c6] hover:border-[#93c5fd] rounded-full px-4 py-2 w-fit"
