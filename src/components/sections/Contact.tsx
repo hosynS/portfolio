@@ -75,7 +75,7 @@ const Contact = () => {
 
 <div className="mt-6 flex items-center gap-5">
   <a
-    href="https://www.linkedin.com/in/saddam-hussain-khan"
+    href="https://www.linkedin.com/in/hosyn/"
     target="_blank"
     rel="noopener noreferrer"
     className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#0A66C2]/500 bg-[#0A66C2]/15 shadow-[0_0_18px_rgba(10,102,194,0.25)] transition-all duration-300 hover:scale-110 hover:bg-[#0A66C2]/25 hover:shadow-[0_0_24px_rgba(10,102,194,0.45)]"

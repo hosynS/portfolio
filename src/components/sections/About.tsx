@@ -61,7 +61,7 @@ const About = () => {
 >
           <img 
             src={personal} 
-            alt="Saddam Hussain" 
+            alt="Hussain" 
             className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-full object-cover shadow-card"
           />
         </motion.div>
